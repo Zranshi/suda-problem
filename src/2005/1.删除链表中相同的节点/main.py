@@ -3,6 +3,7 @@
 # @Author   : Ranshi
 # @File     : main.py
 
+# DEFINE
 class ListNode(object):
     def __init__(self, val: int, _next: 'ListNode' = None):
         self.val = val
@@ -11,17 +12,6 @@ class ListNode(object):
     def push(self, val: int):
         new_node = ListNode(val=val, _next=self.next)
         self.next = new_node
-
-    def remove_same(self):
-        if not self:  # 如果为空直接返回
-            return self
-        point_s, idx = set(), self  # 创建一个集合，用于判定当前结点是否存在过
-        while idx.next:
-            if idx.next.val in point_s:  # 如果存在，则删除当前结点
-                idx.next = idx.next.next
-            else:  # 如果不存在，则将其加入到集合中，并移动idx
-                point_s.add(idx.next.val)
-                idx = idx.next
 
     def __str__(self):
         res = []
@@ -32,6 +22,22 @@ class ListNode(object):
         return ''.join(res)
 
 
+# START
+def remove_same(node: ListNode):
+    if not node:  # 如果为空直接返回
+        return node
+    point_s, idx = set(), node  # 创建一个集合，用于判定当前结点是否存在过
+    while idx.next:
+        if idx.next.val in point_s:  # 如果存在，则删除当前结点
+            idx.next = idx.next.next
+        else:  # 如果不存在，则将其加入到集合中，并移动idx
+            point_s.add(idx.next.val)
+            idx = idx.next
+
+
+# END
+
+# TEST
 if __name__ == '__main__':
     head = ListNode(val=-1)
     head.push(2)
@@ -40,5 +46,5 @@ if __name__ == '__main__':
     head.push(2)
     head.push(4)
     print(head)
-    head.remove_same()
+    remove_same(head)
     print(head)
