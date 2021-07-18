@@ -7,7 +7,7 @@
 def permutations(n: list, begin: int = 0, end: int = None):
     if not end:
         end = len(n)
-    count, res = 0, []
+    res = []
 
     def dfs(arr: list, le: int, ri: int):
         if le >= ri:
