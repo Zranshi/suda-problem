@@ -5,37 +5,7 @@
 
 # DEFINE
 from typing import List
-
-
-class ListNode:
-    def __init__(self, val=0, _next=None):
-        self.val = val
-        self.next = _next
-        self.tail = self
-
-
-class LinkList:
-    def __init__(self):
-        self.head = ListNode()
-        self.tail = self.head
-
-    def push_tail(self, val: int):
-        node = ListNode(val=val)
-        self.tail.next, self.tail = node, node
-
-    def __str__(self):
-        cur, res = self.head.next, []
-        while cur:
-            res.append(str(cur.val))
-            cur = cur.next
-        return '->'.join(res)
-
-
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+from src.define import TreeNode, LinkList
 
 
 def create_tree(arr: List[int], idx: int = 0) -> TreeNode:

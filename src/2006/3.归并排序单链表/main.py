@@ -3,22 +3,7 @@
 # @Author   : Ranshi
 # @File     : main.py
 
-# DEFINE
-class ListNode:
-    def __init__(self, val: int = 0, _next: 'ListNode' = None):
-        self.val = val
-        self.next = _next
-
-    def push_head(self, val: int = 0):
-        node = ListNode(val=val, _next=self.next)
-        self.next = node
-
-    def __str__(self):
-        res, cur = [], self
-        while cur.next:
-            res.append(str(cur.next.val))
-            cur = cur.next
-        return '->'.join(res)
+from src.define import ListNode
 
 
 # START

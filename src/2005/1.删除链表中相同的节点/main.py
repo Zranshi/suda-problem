@@ -3,23 +3,7 @@
 # @Author   : Ranshi
 # @File     : main.py
 
-# DEFINE
-class ListNode(object):
-    def __init__(self, val: int, _next: 'ListNode' = None):
-        self.val = val
-        self.next = _next
-
-    def push(self, val: int):
-        new_node = ListNode(val=val, _next=self.next)
-        self.next = new_node
-
-    def __str__(self):
-        res = []
-        idx = self
-        while idx.next:
-            res.append(str(idx.next.val))
-            idx = idx.next
-        return ''.join(res)
+from src.define import ListNode
 
 
 # START
@@ -40,11 +24,11 @@ def remove_same(node: ListNode):
 # TEST
 if __name__ == '__main__':
     head = ListNode(val=-1)
-    head.push(2)
-    head.push(3)
-    head.push(4)
-    head.push(2)
-    head.push(4)
+    head.push_head(2)
+    head.push_head(3)
+    head.push_head(4)
+    head.push_head(2)
+    head.push_head(4)
     print(head)
     remove_same(head)
     print(head)
