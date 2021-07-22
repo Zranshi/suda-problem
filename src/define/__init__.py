@@ -5,3 +5,4 @@
 from src.define.ListNode import LinkList, ListNode
 from src.define.Triple import Triple, TSMatrix
 from src.define.Tree import TreeNode
+from src.define.Map import Map
