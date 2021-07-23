@@ -3,19 +3,7 @@
 # @Author   : Ranshi
 # @File     : main.py
 
-# DEFINE
-from typing import List
 from src.define import TreeNode, LinkList
-
-
-def create_tree(arr: List[int], idx: int = 0) -> TreeNode:
-    if idx < len(arr) and arr[idx] > 0:
-        newNode = TreeNode(
-            val=arr[idx],
-            left=create_tree(arr, idx * 2 + 1),
-            right=create_tree(arr, idx * 2 + 2),
-        )
-        return newNode
 
 
 # START1
@@ -67,5 +55,5 @@ def leaves_list_rec(tree: TreeNode) -> LinkList:
 
 # TEST
 if __name__ == '__main__':
-    tn = create_tree([1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -1, -1, 10, 11, 12])
+    tn = TreeNode.init_by_list([1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -1, -1, 10, 11, 12])
     print(leaves_list(tn))

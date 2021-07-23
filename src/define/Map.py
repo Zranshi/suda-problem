@@ -2,9 +2,6 @@
 # @Time     : 2021/7/22 11: 54
 # @Author   : Ranshi
 # @File     : Map.py
-from typing import Dict, List, Tuple
-
-
 class Map:
     def __init__(self, value_map):
         """

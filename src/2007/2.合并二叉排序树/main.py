@@ -5,7 +5,6 @@
 
 from src.define import TreeNode
 
-
 # START
 def insert_node(tree: TreeNode, target: TreeNode):
     if target.val == tree.val:
@@ -20,7 +19,6 @@ def insert_node(tree: TreeNode, target: TreeNode):
             insert_node(tree.right, target)
         else:
             tree.right = target
-
 
 def merge_search_tree(tree: TreeNode, target: TreeNode):
     def post_order(idx: TreeNode):
