@@ -34,3 +34,12 @@ class ListNode:
             res.append(str(cur.next.val))
             cur = cur.next
         return '->'.join(res)
+
+    @classmethod
+    def init_list(cls, arr: list):
+        head = ListNode()
+        cur = head
+        for x in arr:
+            node = ListNode(val=x, _next=None)
+            cur.next, cur = node, node
+        return head.next
