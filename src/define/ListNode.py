@@ -30,8 +30,8 @@ class ListNode:
 
     def __str__(self):
         res, cur = [], self
-        while cur.next:
-            res.append(str(cur.next.val))
+        while cur:
+            res.append(str(cur.val))
             cur = cur.next
         return '->'.join(res)
 

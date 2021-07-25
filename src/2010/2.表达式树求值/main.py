@@ -3,11 +3,11 @@
 # @Author   : Ranshi
 # @File     : main.py
 
-from src.define import ExpressionTree
+from src.define import TreeNode
 
 
 # START
-def calculate(t: ExpressionTree) -> int:
+def calculate(t: TreeNode) -> int:
     if not t.left and not t.right:
         return t.val
     return eval(f'{calculate(t.left)}{t.val}{calculate(t.right)}')
@@ -17,5 +17,5 @@ def calculate(t: ExpressionTree) -> int:
 
 # TEST
 if __name__ == '__main__':
-    et = ExpressionTree.init_str('+-*15-7    89  ')
+    et = TreeNode.init_by_list([item if item != ' ' else '' for item in '+-*15-7    89  '])
     print(calculate(et))
