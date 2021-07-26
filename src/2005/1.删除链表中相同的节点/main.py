@@ -5,7 +5,6 @@
 
 from src.define import ListNode
 
-
 # START
 def remove_same(node: ListNode):
     if not node:  # 如果为空直接返回

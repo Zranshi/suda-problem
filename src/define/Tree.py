@@ -31,11 +31,11 @@ class TreeNode:
         res = []
 
         def preOrder(idx_root: TreeNode):
-            res.append(idx_root.val)
+            res.append(str(idx_root.val))
             if idx_root.left:
                 preOrder(idx_root.left)
             if idx_root.right:
                 preOrder(idx_root.right)
 
         preOrder(self)
-        return ''.join(res)
+        return ' '.join(res)
