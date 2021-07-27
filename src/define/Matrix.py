@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # @Time     : 2021/7/20 11: 54
 # @Author   : Ranshi
-# @File     : Triple.py
+# @File     : Matrix.py
 class Triple:
     def __init__(self, i: int, j: int, value: int):
         self.i = i

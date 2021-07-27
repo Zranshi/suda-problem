@@ -2,11 +2,10 @@
 # @Time     : 2021/7/20 11: 55
 # @Author   : Ranshi
 # @File     : Tree.py
-from typing import Iterable
 
 
 class TreeNode:
-    def __init__(self, val, left=None, right=None):
+    def __init__(self, val, left: 'TreeNode' = None, right: 'TreeNode' = None):
         self.val = val
         self.left = left
         self.right = right
@@ -38,4 +37,30 @@ class TreeNode:
                 preOrder(idx_root.right)
 
         preOrder(self)
+        return ' '.join(res)
+
+
+class CSTreeNode:
+    def __init__(self, val, child: 'CSTreeNode' = None, next_sibling: 'CSTreeNode' = None):
+        """
+        采用孩子兄弟法存储的树结构
+        :param val: 数据域
+        :param child: 孩子指针
+        :param next_sibling: 兄弟指针
+        """
+        self.val = val
+        self.child = child
+        self.next_sibling = next_sibling
+
+    def __str__(self):
+        res = []
+
+        def dfs(idx: CSTreeNode):
+            if idx:
+                res.append(str(idx.val))
+                if idx.next_sibling:
+                    dfs(idx.next_sibling)
+                if idx.child:
+                    dfs(idx.child)
+
         return ' '.join(res)
