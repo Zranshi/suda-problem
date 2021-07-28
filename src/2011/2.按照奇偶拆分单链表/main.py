@@ -2,11 +2,16 @@
 # @Time     : 2021/7/25 11:14
 # @Author   : Ranshi
 # @File     : main.py
+from typing import Optional
+import sys
+
+sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
+
 from src.define import ListNode
 
 
 # START
-def split_link(node: ListNode) -> (ListNode, ListNode):
+def split_link(node: Optional[ListNode]):
     head, odd, even = ListNode(val=-1, _next=node), ListNode(), ListNode()
     odd_ptr, even_ptr = odd, even
     idx = 0
@@ -22,7 +27,6 @@ def split_link(node: ListNode) -> (ListNode, ListNode):
 
 
 # END
-
 
 # TEST
 if __name__ == '__main__':

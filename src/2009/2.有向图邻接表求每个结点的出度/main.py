@@ -2,7 +2,9 @@
 # @Time     : 2021/7/23 16: 42
 # @Author   : Ranshi
 # @File     : main.py
+import sys
 
+sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
 from src.define import Map
 
 
@@ -12,7 +14,6 @@ def get_out_degree(m: Map) -> dict:
 
 
 # END
-
 
 # TEST
 if __name__ == '__main__':

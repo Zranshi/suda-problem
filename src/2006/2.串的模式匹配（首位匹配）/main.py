@@ -3,6 +3,7 @@
 # @Author   : Ranshi
 # @File     : main.py
 
+
 # START
 def index(s: str, t: str) -> int:
     length_s = len(s)

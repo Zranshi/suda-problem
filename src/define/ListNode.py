@@ -2,6 +2,9 @@
 # @Time     : 2021/7/20 11: 51
 # @Author   : Ranshi
 # @File     : ListNode.py
+from typing import Any, List, Optional
+
+
 class LinkList:
     def __init__(self):
         self.head = ListNode()
@@ -20,7 +23,7 @@ class LinkList:
 
 
 class ListNode:
-    def __init__(self, val: int = 0, _next: 'ListNode' = None):
+    def __init__(self, val: int = 0, _next: Optional['ListNode'] = None):
         self.val = val
         self.next = _next
 
@@ -28,7 +31,7 @@ class ListNode:
         node = ListNode(val=val, _next=self.next)
         self.next = node
 
-    def __str__(self):
+    def __str__(self) -> str:
         res, cur = [], self
         while cur:
             res.append(str(cur.val))
@@ -36,7 +39,7 @@ class ListNode:
         return '->'.join(res)
 
     @classmethod
-    def init_list(cls, arr: list):
+    def init_list(cls, arr: List[Any]):
         head = ListNode()
         cur = head
         for x in arr:

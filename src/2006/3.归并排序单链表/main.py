@@ -2,13 +2,18 @@
 # @Time     : 2021/7/19 09: 48
 # @Author   : Ranshi
 # @File     : main.py
+import sys
+
+sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
+from typing import Optional
 
 from src.define import ListNode
 
 
 # START
-def merge_sort_ln(head: ListNode) -> ListNode:
-    def merge_ln(h1: ListNode, h2: ListNode) -> ListNode:
+def merge_sort_ln(head: ListNode) -> Optional[ListNode]:
+    def merge_ln(h1: Optional[ListNode],
+                 h2: Optional[ListNode]) -> Optional[ListNode]:
         d_h = ListNode()
         t, t1, t2 = d_h, h1, h2
         while t1 and t2:
@@ -21,16 +26,19 @@ def merge_sort_ln(head: ListNode) -> ListNode:
             t.next = t1
         else:
             t.next = t2
+        if not d_h.next:
+            return None
         return d_h.next
 
-    def sort_func(h: ListNode, tail: ListNode = None) -> ListNode:
+    def sort_func(h: Optional[ListNode],
+                  tail: Optional[ListNode] = None) -> Optional[ListNode]:
         if not h:
             return h
         if h.next == tail:
             h.next = None
             return h
         slow = fast = h
-        while fast != tail:
+        while slow and fast and fast != tail:
             slow, fast = slow.next, fast.next
             if fast != tail and fast:
                 fast = fast.next

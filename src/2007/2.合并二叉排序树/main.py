@@ -2,8 +2,11 @@
 # @Time     : 2021/7/20 12: 14
 # @Author   : Ranshi
 # @File     : main.py
+import sys
 
+sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
 from src.define import TreeNode
+
 
 # START
 def insert_node(tree: TreeNode, target: TreeNode):
@@ -20,6 +23,7 @@ def insert_node(tree: TreeNode, target: TreeNode):
         else:
             tree.right = target
 
+
 def merge_search_tree(tree: TreeNode, target: TreeNode):
     def post_order(idx: TreeNode):
         if idx.left:
@@ -30,5 +34,6 @@ def merge_search_tree(tree: TreeNode, target: TreeNode):
         insert_node(tree, idx)
 
     post_order(target)
+
 
 # END

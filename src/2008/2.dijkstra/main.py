@@ -2,8 +2,9 @@
 # @Time     : 2021/7/22 11: 53
 # @Author   : Ranshi
 # @File     : main.py
-import json
+import sys
 
+sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
 from src.define import Map
 
 
@@ -13,7 +14,8 @@ def dijkstra(target_map: Map, node: int):
     pre_node = {node: node}  # 记录路径中的前驱
     v = {node}  # 记录节点是否已经有了最短路径
 
-    for line_node, line_cost in target_map.get_lines(node):  # 先将起始点能直接遍历到的点记入dict中
+    for line_node, line_cost in target_map.get_lines(
+            node):  # 先将起始点能直接遍历到的点记入dict中
         point_dict[line_node] = line_cost
         pre_node[line_node] = node
 
@@ -27,7 +29,8 @@ def dijkstra(target_map: Map, node: int):
         v.add(min_node)
 
         for line_node, line_cost in target_map.get_lines(min_node):  # 更新dict
-            if line_node not in point_dict or point_dict[line_node] > line_cost + cost:
+            if line_node not in point_dict or point_dict[
+                    line_node] > line_cost + cost:
                 point_dict[line_node] = line_cost + cost
                 pre_node[line_node] = min_node
 
@@ -48,7 +51,6 @@ def format_res(cost, pre):
 
 
 # END
-
 
 # TEST
 if __name__ == '__main__':

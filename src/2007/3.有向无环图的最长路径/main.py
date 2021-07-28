@@ -3,6 +3,7 @@
 # @Author   : Ranshi
 # @File     : main.py
 
+
 # START
 def longest_path(_map: dict):
     """
@@ -37,11 +38,5 @@ def longest_path(_map: dict):
 
 # TEST
 if __name__ == '__main__':
-    m = {
-        1: [2, 3, 4],
-        2: [3],
-        3: [4, 5],
-        4: [5],
-        5: []
-    }
+    m = {1: [2, 3, 4], 2: [3], 3: [4, 5], 4: [5], 5: []}
     print(longest_path(_map=m))

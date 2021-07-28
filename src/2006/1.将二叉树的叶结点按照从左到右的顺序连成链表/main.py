@@ -2,8 +2,10 @@
 # @Time     : 2021/7/18 20: 40
 # @Author   : Ranshi
 # @File     : main.py
+import sys
 
-from src.define import TreeNode, LinkList
+sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
+from src.define import LinkList, TreeNode
 
 
 # START1
@@ -28,6 +30,7 @@ def leaves_list(tree: TreeNode) -> LinkList:
 
 
 # EDN1
+
 
 # START2
 def leaves_list_rec(tree: TreeNode) -> LinkList:
@@ -55,5 +58,7 @@ def leaves_list_rec(tree: TreeNode) -> LinkList:
 
 # TEST
 if __name__ == '__main__':
-    tn = TreeNode.init_by_list([1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -1, -1, 10, 11, 12])
-    print(leaves_list(tn))
+    tn = TreeNode.init_by_list(
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -1, -1, 10, 11, 12])
+    if tn:
+        print(leaves_list(tn))

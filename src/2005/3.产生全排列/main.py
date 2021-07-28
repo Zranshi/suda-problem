@@ -3,8 +3,10 @@
 # @Author   : Ranshi
 # @File     : main.py
 
+
 # START
-def permutations(n: list, begin: int = 0, end: int = None):  # 递归实现不知道咋写成生成器函数，因为yield仅仅只是返回当前函数，而函数有多层调用栈
+def permutations(n: list, begin: int = 0, end: int = None):
+    # 递归实现不知道咋写成生成器函数，因为yield仅仅只是返回当前函数，而函数有多层调用栈
     if not end:
         end = len(n)
     res = []

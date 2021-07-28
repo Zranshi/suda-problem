@@ -2,11 +2,15 @@
 # @Time     : 2021/7/26 13:04
 # @Author   : Ranshi
 # @File     : main.py
+import sys
+from typing import Optional
+
+sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
 from src.define import ListNode
 
 
 # START
-def change(node: ListNode, i: int) -> ListNode:
+def change(node: Optional[ListNode], i: int) -> Optional[ListNode]:
     idx = 1
     head = ListNode(val=0, _next=node)
     cur = head
@@ -15,8 +19,9 @@ def change(node: ListNode, i: int) -> ListNode:
             node1 = cur.next
             node2 = cur.next.next
             cur.next = node2
-            node1.next = node2.next
-            node2.next = node1
+            if node2:
+                node1.next = node2.next
+                node2.next = node1
             break
         idx += 1
         cur = cur.next
@@ -24,7 +29,6 @@ def change(node: ListNode, i: int) -> ListNode:
 
 
 # END
-
 
 # TEST
 if __name__ == '__main__':

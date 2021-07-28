@@ -2,20 +2,28 @@
 # @Time     : 2021/7/24 10: 52
 # @Author   : Ranshi
 # @File     : main.py
+import sys
+
+sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
+from typing import Optional
 
 from src.define import TreeNode
 
 
 # START
-def calculate(t: TreeNode) -> int:
-    if not t.left and not t.right:
-        return t.val
-    return eval(f'{calculate(t.left)}{t.val}{calculate(t.right)}')
+def calculate(t: Optional[TreeNode]) -> int:
+    if t:
+        if not t.left and not t.right:
+            return t.val
+        return eval(f'{calculate(t.left)}{t.val}{calculate(t.right)}')
+    else:
+        return -1
 
 
 # END
 
 # TEST
 if __name__ == '__main__':
-    et = TreeNode.init_by_list([item if item != ' ' else '' for item in '+-*15-7    89  '])
+    et = TreeNode.init_by_list(
+        [item if item != ' ' else '' for item in '+-*15-7    89  '])
     print(calculate(et))

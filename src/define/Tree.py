@@ -4,14 +4,17 @@
 # @File     : Tree.py
 
 
+from typing import Any, List, Optional
+
+
 class TreeNode:
-    def __init__(self, val, left: 'TreeNode' = None, right: 'TreeNode' = None):
+    def __init__(self, val, left: Optional['TreeNode'] = None, right: Optional['TreeNode'] = None):
         self.val = val
         self.left = left
         self.right = right
 
     @classmethod
-    def init_by_list(cls, arr: list, idx: int = 0) -> 'TreeNode':
+    def init_by_list(cls, arr: List[Any], idx: int = 0) -> Optional['TreeNode']:
         """
         使用列表初始化一个二叉树
         :param arr:
@@ -41,7 +44,7 @@ class TreeNode:
 
 
 class CSTreeNode:
-    def __init__(self, val, child: 'CSTreeNode' = None, next_sibling: 'CSTreeNode' = None):
+    def __init__(self, val, child: Optional['CSTreeNode'] = None, next_sibling: Optional['CSTreeNode'] = None):
         """
         采用孩子兄弟法存储的树结构
         :param val: 数据域

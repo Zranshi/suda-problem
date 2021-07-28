@@ -2,12 +2,15 @@
 # @Time     : 2021/7/25 10:49
 # @Author   : Ranshi
 # @File     : main.py
+import sys
+from typing import Optional
 
+sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
 from src.define import TreeNode
 
 
 # START
-def level_order(node: TreeNode) -> list:
+def level_order(node: Optional[TreeNode]) -> list:
     from collections import deque
     dq, res = deque(), []
     dq.appendleft(node)
@@ -25,5 +28,6 @@ def level_order(node: TreeNode) -> list:
 
 # TEST
 if __name__ == '__main__':
-    tree = TreeNode.init_by_list([item if item != ' ' else '' for item in '123456 7 89'])
+    tree = TreeNode.init_by_list(
+        [item if item != ' ' else '' for item in '123456 7 89'])
     print(level_order(tree))

@@ -3,6 +3,7 @@
 # @Author   : Ranshi
 # @File     : main.py
 
+
 # START
 def get_number(x: int) -> int:
     res, next_num = 1, sum([int(item) for item in str(x)])
