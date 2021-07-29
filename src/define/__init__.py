@@ -6,7 +6,7 @@ import sys
 
 sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
 
-from src.define.ListNode import LinkList, ListNode
+from src.define.ListNode import LinkList, ListNode, DulLinkedList
 from src.define.Map import Map
 from src.define.Matrix import Triple, TSMatrix
 from src.define.Tree import CSTreeNode, TreeNode

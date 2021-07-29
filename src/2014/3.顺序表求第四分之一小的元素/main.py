@@ -8,7 +8,7 @@ from typing import List
 # START
 
 
-def get_quarter(arr: List[int], lo: int = 0, hi: int = None) -> int:
+def get_quarter(arr: List[int], lo: int = 0, hi: int = 0) -> int:
     k = len(arr) // 4
     if not hi:
         hi = len(arr) - 1
@@ -33,16 +33,9 @@ def get_quarter(arr: List[int], lo: int = 0, hi: int = None) -> int:
         return -1
 
 
-def get_q(arr: List[int]) -> int:
-    arr.sort()
-    print(arr)
-    return arr[len(arr) // 4]
-
-
 # END
 
 # TEST
 if __name__ == '__main__':
     arr: List[int] = [1, 24, 2, 45, 6, 56, 7, 33, 35, 42, 16, 23]
-    # print(get_q(arr))
     print(get_quarter(arr))

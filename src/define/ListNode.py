@@ -2,7 +2,7 @@
 # @Time     : 2021/7/20 11: 51
 # @Author   : Ranshi
 # @File     : ListNode.py
-from typing import Any, List, Optional
+from typing import Any, Iterable, List, Optional
 
 
 class LinkList:
@@ -46,3 +46,30 @@ class ListNode:
             node = ListNode(val=x, _next=None)
             cur.next, cur = node, node
         return head.next
+
+
+class DulLinkedList:
+    def __init__(self,
+                 val: int = 0,
+                 _next: Optional['DulLinkedList'] = None,
+                 pre: Optional['DulLinkedList'] = None) -> None:
+        self.val = val
+        self.next = _next
+        self.pre = pre
+
+    @classmethod
+    def init_by_list(cls, vals: Iterable) -> Optional['DulLinkedList']:
+        head = DulLinkedList()
+        cur = head
+        for x in vals:
+            node = DulLinkedList(val=x, pre=cur)
+            cur.next, cur = node, node
+        return head.next
+
+    def __str__(self) -> str:
+        res = []
+        cur = self
+        while cur:
+            res.append(str(cur.val))
+            cur = cur.next
+        return '<->'.join(res)
