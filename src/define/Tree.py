@@ -8,12 +8,7 @@ from typing import Any, List, Optional
 
 
 class TreeNode:
-    def __init__(
-        self,
-        val,
-        left: Optional['TreeNode'] = None,
-        right: Optional['TreeNode'] = None,
-    ) -> None:
+    def __init__(self, val, left, right) -> None:
         self.val = val
         self.left = left
         self.right = right
@@ -31,16 +26,16 @@ class TreeNode:
         :return:
         """
         if idx < len(arr) and arr[idx]:
-            newNode = TreeNode(
+            new_node = TreeNode(
                 val=arr[idx],
                 left=TreeNode.init_by_list(arr, idx * 2 + 1),
                 right=TreeNode.init_by_list(arr, idx * 2 + 2),
             )
-            return newNode
+            return new_node
 
     def __str__(self) -> str:
         dq = deque()
-        level_node: List[List[int]] = [[]]
+        level_node: List[List[str]] = [[]]
         dq.appendleft((self, 0))
         while dq:
             idx, idx_level = dq.pop()
@@ -54,12 +49,7 @@ class TreeNode:
 
 
 class CSTreeNode:
-    def __init__(
-        self,
-        val,
-        child: Optional['CSTreeNode'] = None,
-        next_sibling: Optional['CSTreeNode'] = None,
-    ) -> None:
+    def __init__(self, val, child, next_sibling) -> None:
         """
         采用孩子兄弟法存储的树结构
         :param val: 数据域

@@ -2,10 +2,7 @@
 # @Time     : 2021/07/29 17:40
 # @Author   : Ranshi
 # @File     : main.py
-import sys
-
-sys.path.append('/Users/rs/Documents/projects/python_project/suda-problem/src')
-from define import ListNode
+from src.define import ListNode
 
 
 # START

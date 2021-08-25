@@ -11,7 +11,7 @@ def less_nums(n: int) -> List[int]:
     dp = set()
 
     def dfs(idx: int):
-        if idx <= 100 and idx not in dp:
+        if idx <= n and idx not in dp:
             dp.add(idx)
             dfs(idx * 2)
             dfs(idx * 3)

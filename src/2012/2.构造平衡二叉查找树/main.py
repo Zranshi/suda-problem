@@ -11,7 +11,8 @@ def init_balance_search_tree(n: int) -> TreeNode:
         mid = (le + ri) // 2
         return TreeNode(val=mid,
                         left=dfs(le, mid - 1) if le != mid else None,
-                        right=dfs(mid + 1, ri) if ri != mid else None)
+                        right=dfs(mid + 1, ri) if ri != mid else None,
+                        )
 
     return dfs(1, n)
 

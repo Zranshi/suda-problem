@@ -2,9 +2,6 @@
 # @Time     : 2021/7/24 10: 52
 # @Author   : Ranshi
 # @File     : main.py
-import sys
-
-sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
 from typing import Optional
 
 from src.define import TreeNode

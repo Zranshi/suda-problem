@@ -2,10 +2,8 @@
 # @Time     : 2021/07/28 20:29
 # @Author   : Ranshi
 # @File     : main.py
-import sys
 from typing import Set
 
-sys.path.append('/Users/rs/Documents/projects/python_project/suda-problem')
 from src.define import DulLinkedList
 
 
@@ -16,7 +14,7 @@ def two_sum1(node: DulLinkedList, target: int) -> str:
     cur = node
     while cur:
         if cur.val in num_set:
-            return f'{target} = {target-cur.val} + {cur.val}'
+            return f'{target} = {target - cur.val} + {cur.val}'
         else:
             num_set.add(target - cur.val)
         cur = cur.next

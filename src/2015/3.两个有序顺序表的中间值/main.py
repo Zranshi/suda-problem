@@ -7,21 +7,21 @@ from typing import List
 
 
 # START
-def two_order_list_median(l1: List[int], l2: List[int]) -> float:
+def two_order_list_median(list1: List[int], list2: List[int]) -> float:
     merge_l: List[int] = []
     flag = 'even'
-    target = (len(l1) + len(l2)) // 2
-    if (len(l1) + len(l2)) % 2:
+    target = (len(list1) + len(list2)) // 2
+    if (len(list1) + len(list2)) % 2:
         flag = 'odd'
         target += 1
     idx: int = 0
     ptr1, ptr2 = 0, 0
-    while ptr1 < len(l1) and ptr2 < len(l2):
-        if l1[ptr1] < l2[ptr2]:
-            merge_l.append(l1[ptr1])
+    while ptr1 < len(list1) and ptr2 < len(list2):
+        if list1[ptr1] < list2[ptr2]:
+            merge_l.append(list1[ptr1])
             ptr1 += 1
         else:
-            merge_l.append(l2[ptr2])
+            merge_l.append(list2[ptr2])
             ptr2 += 1
         idx += 1
         if idx == target:

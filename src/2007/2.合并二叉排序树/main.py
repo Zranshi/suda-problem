@@ -2,9 +2,6 @@
 # @Time     : 2021/7/20 12: 14
 # @Author   : Ranshi
 # @File     : main.py
-import sys
-
-sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
 from src.define import TreeNode
 
 
@@ -34,6 +31,5 @@ def merge_search_tree(tree: TreeNode, target: TreeNode):
         insert_node(tree, idx)
 
     post_order(target)
-
 
 # END

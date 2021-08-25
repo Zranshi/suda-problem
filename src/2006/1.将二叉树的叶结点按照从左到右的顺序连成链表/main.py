@@ -2,9 +2,6 @@
 # @Time     : 2021/7/18 20: 40
 # @Author   : Ranshi
 # @File     : main.py
-import sys
-
-sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
 from src.define import LinkList, TreeNode
 
 

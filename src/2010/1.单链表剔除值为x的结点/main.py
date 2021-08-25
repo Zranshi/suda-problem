@@ -2,10 +2,8 @@
 # @Time     : 2021/7/24 10: 32
 # @Author   : Ranshi
 # @File     : main.py
-import sys
 from typing import Optional
 
-sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
 from src.define import ListNode
 
 

@@ -2,10 +2,6 @@
 # @Time     : 2021/07/28 09:48
 # @Author   : Ranshi
 # @File     : main.py
-
-import sys
-
-sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
 from typing import Optional
 
 from src.define import ListNode
@@ -31,5 +27,5 @@ def get_prime_factor(num: int) -> Optional["ListNode"]:
 # END
 # TEST
 if __name__ == "__main__":
-    ln = get_prime_factor(2100)
+    ln = get_prime_factor(2200)
     print(ln)

@@ -5,9 +5,8 @@
 
 from typing import List
 
+
 # START
-
-
 def get_quarter(arr: List[int], lo: int = 0, hi: int = 0) -> int:
     k = len(arr) // 4
     if not hi:

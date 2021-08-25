@@ -3,9 +3,6 @@
 # @Author   : Ranshi
 # @File     : main.py
 from typing import Optional
-import sys
-
-sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
 
 from src.define import ListNode
 

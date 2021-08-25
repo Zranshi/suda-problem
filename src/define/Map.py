@@ -2,10 +2,13 @@
 # @Time     : 2021/7/22 11: 54
 # @Author   : Ranshi
 # @File     : Map.py
+from collections import defaultdict
 from typing import Any, Dict, List, Tuple
 
+from src.define.ListNode import LinkList
 
-class Map:
+
+class Map(object):
     def __init__(self, value_map: Dict[Any, List[Tuple[Any]]]):
         """
         构造函数，根据一个字典构造带权值有向图
@@ -29,3 +32,24 @@ class Map:
                 yield line
         else:
             return None
+
+
+class AdjacencyList(object):
+    def __init__(self, value_map: Dict[Any, List[Tuple[Any]]]) -> None:
+        """构造函数，根据一个字典构造带权值有向图
+
+        Args:
+            value_map (Dict[Any, List[Tuple[Any]]]): 形如：{
+                    start_node : [(end_node11, cost11), (end_node12, cost12)...]
+                    start_node : [(end_node21, cost21), (end_node22, cost22)...]
+                    ...
+                } 所表示的图
+        """
+        self.graph = defaultdict(LinkList)
+        for key in value_map:
+            for line in value_map[key]:
+                self.graph[key].push_tail(line[0])
+                self.graph[key].head.val += 1
+
+    def get_next_node(self, node: int):
+        return self.graph[node].head.next
