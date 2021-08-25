@@ -20,18 +20,18 @@ def remove_same(node: Optional[ListNode]) -> Optional[ListNode]:
     Returns:
         Optional[ListNode]: 去重后的链表
     """
-    if not node:  # 如果为空直接返回
+    if not node:
         return node
-    point_s, idx = set(), node  # 创建一个集合，用于判定当前结点是否存在过
+    point_s, idx = set(), node
     while idx.next:
-        if idx.next.val in point_s:  # 如果存在，则删除当前结点
+        if idx.next.val in point_s:
             idx.next = idx.next.next
-        else:  # 如果不存在，则将其加入到集合中，并移动idx
+        else:
             point_s.add(idx.next.val)
             idx = idx.next
 
 
-# ENDs
+# END
 
 # TEST
 if __name__ == '__main__':
