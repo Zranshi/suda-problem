@@ -8,6 +8,7 @@ from typing import Any, List, Optional
 
 
 class TreeNode:
+
     def __init__(self, val, left, right) -> None:
         self.val = val
         self.left = left
@@ -49,6 +50,7 @@ class TreeNode:
 
 
 class CSTreeNode:
+
     def __init__(self, val, child, next_sibling) -> None:
         """
         采用孩子兄弟法存储的树结构
@@ -75,6 +77,7 @@ class CSTreeNode:
 
 
 class SearchTree(TreeNode):
+
     def __init__(
         self,
         val: int,

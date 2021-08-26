@@ -9,8 +9,28 @@ from src.define import ListNode
 
 # START
 def merge_sort_ln(head: ListNode) -> Optional[ListNode]:
+    """
+    归并排序算法排序单链表.
+
+    Args:
+        head (ListNode): 单链表的头结点.
+
+    Returns:
+        Optional[ListNode]: 排序后的单链表头结点.
+    """
+
     def merge_ln(h1: Optional[ListNode],
                  h2: Optional[ListNode]) -> Optional[ListNode]:
+        """
+        合并函数. 将两个排序好的单链表合并为一个排序好的单链表.
+
+        Args:
+            h1 (Optional[ListNode]): 第一个排序好的单链表.
+            h2 (Optional[ListNode]): 第二个排序好的单链表.
+
+        Returns:
+            Optional[ListNode]: 合并完成的单链表.
+        """
         d_h = ListNode()
         t, t1, t2 = d_h, h1, h2
         while t1 and t2:
@@ -29,6 +49,17 @@ def merge_sort_ln(head: ListNode) -> Optional[ListNode]:
 
     def sort_func(h: Optional[ListNode],
                   tail: Optional[ListNode] = None) -> Optional[ListNode]:
+        """
+        递归拆分函数. 拆分直到头结点和尾结点中间仅剩一个结点, 或者没有结点.
+        采用快慢指针的方式找到头尾结点的中间结点, 然后拆分为两部分.
+
+        Args:
+            h (Optional[ListNode]): 拆分的头结点
+            tail (Optional[ListNode], optional): 拆分的尾结点. Defaults to None.
+
+        Returns:
+            Optional[ListNode]: 返回排序好的单链表.
+        """
         if not h:
             return h
         if h.next == tail:
