@@ -18,4 +18,5 @@ def max_k(node: Optional[SearchTree], k: int) -> Optional[SearchTree]:
     else:
         return max_k(node.right, k)
 
+
 # END

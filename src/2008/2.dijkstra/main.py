@@ -27,7 +27,7 @@ def dijkstra(target_map: Map, node: int):
 
         for line_node, line_cost in target_map.get_lines(min_node):  # 更新dict
             if line_node not in point_dict or point_dict[
-                line_node] > line_cost + cost:
+                    line_node] > line_cost + cost:
                 point_dict[line_node] = line_cost + cost
                 pre_node[line_node] = min_node
 

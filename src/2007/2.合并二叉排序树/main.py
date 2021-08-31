@@ -22,6 +22,7 @@ def insert_node(tree: TreeNode, target: TreeNode):
 
 
 def merge_search_tree(tree: TreeNode, target: TreeNode):
+
     def post_order(idx: TreeNode):
         if idx.left:
             post_order(idx.left)
@@ -31,5 +32,6 @@ def merge_search_tree(tree: TreeNode, target: TreeNode):
         insert_node(tree, idx)
 
     post_order(target)
+
 
 # END

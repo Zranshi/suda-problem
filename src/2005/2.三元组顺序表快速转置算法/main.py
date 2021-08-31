@@ -54,7 +54,7 @@ if __name__ == '__main__':
             Triple(4, 3, 24),
             Triple(5, 2, 18),
             Triple(6, 1, 15),
-            Triple(6, 4, -7),
+            Triple(6, 4, -7)
         ],
     )
     print(fast_transpose(t))

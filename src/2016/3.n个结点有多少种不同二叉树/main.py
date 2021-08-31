@@ -12,7 +12,7 @@ def n_node_tree_num(n: int) -> int:
         for j in range(0, i // 2):
             dp[i] += 2 * (dp[j] * dp[i - j - 1])
         if i % 2 == 1:
-            dp[i] += dp[i // 2] ** 2
+            dp[i] += dp[i // 2]**2
     return dp[-1]
 
 

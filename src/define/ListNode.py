@@ -6,6 +6,7 @@ from typing import Any, Iterable, List, Optional
 
 
 class LinkList:
+
     def __init__(self):
         self.head = ListNode()
         self.tail = self.head
@@ -23,6 +24,7 @@ class LinkList:
 
 
 class ListNode:
+
     def __init__(self, val: int = 0, _next: Optional['ListNode'] = None):
         self.val = val
         self.next = _next
@@ -39,7 +41,7 @@ class ListNode:
         return '->'.join(res)
 
     @classmethod
-    def init_list(cls, arr: List[Any]):
+    def init_list(cls, arr: List[Any]) -> Optional['ListNode']:
         head = ListNode()
         cur = head
         for x in arr:
@@ -49,6 +51,7 @@ class ListNode:
 
 
 class DulLinkedList:
+
     def __init__(self,
                  val: int = 0,
                  _next: Optional['DulLinkedList'] = None,

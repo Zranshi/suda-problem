@@ -7,6 +7,18 @@ from src.define import ListNode
 
 # START
 def intersection(l1: ListNode, l2: ListNode) -> ListNode:
+    """
+    求两个有序单链表的交集, 存放在l1中.
+    设置两个指针分别指向两个链表的开头, 如果两个指针指向的结点的值相同, 则表示位于交集内.
+    如果不相同, 则比较两个结点的值的大小, 如果l1的大, 则移动l2的指针. 否则删除当前l1的结点.
+
+    Args:
+        l1 (ListNode): 有序单链表1
+        l2 (ListNode): 有序单链表2
+
+    Returns:
+        ListNode: 交集的单链表
+    """
     if not l1 or not l2:
         return l1
     h1, h2 = ListNode(0, l1), ListNode(0, l2)
@@ -28,19 +40,7 @@ def intersection(l1: ListNode, l2: ListNode) -> ListNode:
 
 # TEST
 if __name__ == '__main__':
-    a, b = ListNode(), ListNode()
-    a.push_head(7)
-    a.push_head(5)
-    a.push_head(5)
-    a.push_head(4)
-    a.push_head(3)
-    a.push_head(2)
-    a.push_head(1)
-    b.push_head(8)
-    b.push_head(7)
-    b.push_head(4)
-    b.push_head(4)
-    b.push_head(4)
-    b.push_head(2)
-    b.push_head(1)
-    print(intersection(a, b))
+    a = ListNode.init_list([1, 2, 3, 4, 5, 7])
+    b = ListNode.init_list([1, 2, 4, 7, 8])
+    if a and b:
+        print(intersection(a, b))

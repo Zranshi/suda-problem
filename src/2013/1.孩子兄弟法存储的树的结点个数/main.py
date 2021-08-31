@@ -12,4 +12,5 @@ def get_node_number(node: Optional[CSTreeNode]) -> int:
     return 1 + get_node_number(node.next_sibling) + get_node_number(
         node.child) if node else 0
 
+
 # END

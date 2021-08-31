@@ -9,6 +9,7 @@ from src.define.ListNode import LinkList
 
 
 class Map(object):
+
     def __init__(self, value_map: Dict[Any, List[Tuple[Any]]]):
         """
         构造函数，根据一个字典构造带权值有向图
@@ -35,11 +36,12 @@ class Map(object):
 
 
 class AdjacencyList(object):
-    def __init__(self, value_map: Dict[Any, List[Tuple[Any]]]) -> None:
+
+    def __init__(self, value_map: dict) -> None:
         """构造函数，根据一个字典构造带权值有向图
 
         Args:
-            value_map (Dict[Any, List[Tuple[Any]]]): 形如：{
+            value_map (dict): 形如：{
                     start_node : [(end_node11, cost11), (end_node12, cost12)...]
                     start_node : [(end_node21, cost21), (end_node22, cost22)...]
                     ...

@@ -15,11 +15,13 @@ class Triple:
 
 class TSMatrix:
 
-    def __init__(self,
-                 mu: int,
-                 nu: int,
-                 tu: int,
-                 triple_list: List[Triple] = []):
+    def __init__(
+        self,
+        mu: int,
+        nu: int,
+        tu: int,
+        triple_list: List[Triple] = [],
+    ):
         self.mu = mu
         self.nu = nu
         self.tu = tu

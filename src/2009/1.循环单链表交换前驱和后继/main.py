@@ -13,4 +13,5 @@ def change_pre_post(node: ListNode):
     if cur and node.next:
         node.next, cur.next = cur, node.next.next
 
+
 # END

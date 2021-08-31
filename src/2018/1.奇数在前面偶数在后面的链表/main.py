@@ -25,4 +25,5 @@ def check(node: ListNode) -> bool:
 
 if __name__ == '__main__':
     s = ListNode.init_list([0, 1, 3, 5, 8, 4, 2])
-    print(check(s))
+    if s:
+        print(check(s))
