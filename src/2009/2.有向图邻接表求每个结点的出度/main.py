@@ -13,7 +13,7 @@ def get_out_degree(m: Map) -> dict:
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     test_map = {
         1: [(2, 4), (3, 3)],
         2: [(4, 8), (5, 6)],
@@ -22,7 +22,7 @@ if __name__ == '__main__':
         5: [(8, 1), (4, 1)],
         6: [(8, 9)],
         7: [(8, 2)],
-        8: []
+        8: [],
     }
     m = Map(value_map=test_map)
     print(get_out_degree(m))

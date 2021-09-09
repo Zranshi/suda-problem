@@ -24,5 +24,5 @@ def less_nums(n: int) -> List[int]:
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(less_nums(100))

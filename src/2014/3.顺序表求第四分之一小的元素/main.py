@@ -35,6 +35,6 @@ def get_quarter(arr: List[int], lo: int = 0, hi: int = 0) -> int:
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     arr: List[int] = [1, 24, 2, 45, 6, 56, 7, 33, 35, 42, 16, 23]
     print(get_quarter(arr))

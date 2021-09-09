@@ -10,6 +10,7 @@ from src.define import TreeNode
 # START
 def level_order(node: Optional[TreeNode]) -> list:
     from collections import deque
+
     dq, res = deque(), []
     dq.appendleft(node)
     while dq:
@@ -25,7 +26,8 @@ def level_order(node: Optional[TreeNode]) -> list:
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     tree = TreeNode.init_by_list(
-        [item if item != ' ' else '' for item in '123456 7 89'])
+        [item if item != " " else "" for item in "123456 7 89"]
+    )
     print(level_order(tree))

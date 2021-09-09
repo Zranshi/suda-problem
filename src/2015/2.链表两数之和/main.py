@@ -14,7 +14,7 @@ def two_sum1(node: DulLinkedList, target: int) -> str:
     cur = node
     while cur:
         if cur.val in num_set:
-            return f'{target} = {target - cur.val} + {cur.val}'
+            return f"{target} = {target - cur.val} + {cur.val}"
         else:
             num_set.add(target - cur.val)
         cur = cur.next
@@ -29,18 +29,18 @@ def two_sum2(node: DulLinkedList, target: int) -> str:
     tail, head = cur, node
     while tail and head and tail != head:
         if tail.val + head.val == target:
-            return f'{target} = {head.val} + {tail.val}'
+            return f"{target} = {head.val} + {tail.val}"
         elif tail.val + head.val < target:
             head = head.next
         else:
             tail = tail.pre
-    return 'not exist two numbers sum equals target.'
+    return "not exist two numbers sum equals target."
 
 
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     dll = DulLinkedList.init_by_list(vals=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
     if dll:
         print(two_sum2(dll, 16))

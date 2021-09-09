@@ -5,13 +5,14 @@
 import sys
 from typing import List, Optional
 
-sys.path.append('/Users/rs/Documents/projects/python_project/suda-problem')
+sys.path.append("/Users/rs/Documents/projects/python_project/suda-problem")
 from src.define import TreeNode
 
 
 # START
-def init_tree_by_list(chs: Optional[List[str]],
-                      idx: int = 0) -> Optional[TreeNode]:
+def init_tree_by_list(
+    chs: Optional[List[str]], idx: int = 0
+) -> Optional[TreeNode]:
     if chs and idx < len(chs):
         return TreeNode(
             val=chs[idx],
@@ -23,8 +24,8 @@ def init_tree_by_list(chs: Optional[List[str]],
 # END
 
 # TEST
-if __name__ == '__main__':
-    chs: List[str] = list('swefdsaqwddgcsf')
+if __name__ == "__main__":
+    chs: List[str] = list("swefdsaqwddgcsf")
     node = init_tree_by_list(chs)
     if node:
         # 输出前序遍历

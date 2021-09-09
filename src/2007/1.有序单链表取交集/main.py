@@ -39,7 +39,7 @@ def intersection(l1: ListNode, l2: ListNode) -> ListNode:
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     a = ListNode.init_list([1, 2, 3, 4, 5, 7])
     b = ListNode.init_list([1, 2, 4, 7, 8])
     if a and b:

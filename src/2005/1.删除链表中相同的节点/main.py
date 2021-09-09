@@ -34,7 +34,7 @@ def remove_same(node: Optional[ListNode]) -> Optional[ListNode]:
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     head = ListNode(val=-1)
     head.push_head(2)
     head.push_head(3)

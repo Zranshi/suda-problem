@@ -28,7 +28,7 @@ def bfs(ad_list: AdjacencyList, start: int, end: int):
 # END
 # TEST
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ad = AdjacencyList(
         value_map={
             1: [(2, 4), (3, 3)],
@@ -39,9 +39,6 @@ if __name__ == '__main__':
             6: [(8, 9)],
             7: [(8, 2)],
             8: [],
-        })
-    print(bfs(
-        ad_list=ad,
-        start=1,
-        end=8,
-    ))
+        }
+    )
+    print(bfs(ad_list=ad, start=1, end=8))

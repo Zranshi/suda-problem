@@ -22,6 +22,6 @@ def shell_sort(arr: List[int]):
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     nums = [34, 5, 12, 1, 4, 6, 7, 8, 67, 2, 87, 3, 55]
     print(shell_sort(nums))

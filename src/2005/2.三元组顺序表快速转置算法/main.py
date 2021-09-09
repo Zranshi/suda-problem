@@ -41,7 +41,7 @@ def fast_transpose(ts: TSMatrix) -> TSMatrix:
 
 # END
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = TSMatrix(
         mu=6,
         nu=5,
@@ -54,7 +54,7 @@ if __name__ == '__main__':
             Triple(4, 3, 24),
             Triple(5, 2, 18),
             Triple(6, 1, 15),
-            Triple(6, 4, -7)
+            Triple(6, 4, -7),
         ],
     )
     print(fast_transpose(t))

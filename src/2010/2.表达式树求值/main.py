@@ -12,7 +12,7 @@ def calculate(t: Optional[TreeNode]) -> int:
     if t:
         if not t.left and not t.right:
             return t.val
-        return eval(f'{calculate(t.left)}{t.val}{calculate(t.right)}')
+        return eval(f"{calculate(t.left)}{t.val}{calculate(t.right)}")
     else:
         return -1
 
@@ -20,7 +20,8 @@ def calculate(t: Optional[TreeNode]) -> int:
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     et = TreeNode.init_by_list(
-        [item if item != ' ' else '' for item in '+-*15-7    89  '])
+        [item if item != " " else "" for item in "+-*15-7    89  "]
+    )
     print(calculate(et))

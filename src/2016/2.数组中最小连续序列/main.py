@@ -21,5 +21,5 @@ def min_subsequence(arr: List[int]) -> int:
 
 # TEST
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(min_subsequence([10, 20, -10, 8, -30, 20]))

@@ -7,7 +7,6 @@ from src.define import TreeNode
 
 # START
 def init_balance_search_tree(n: int) -> TreeNode:
-
     def dfs(le: int, ri: int) -> TreeNode:
         mid = (le + ri) // 2
         return TreeNode(
@@ -22,6 +21,6 @@ def init_balance_search_tree(n: int) -> TreeNode:
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     s = init_balance_search_tree(10)
     print(s)

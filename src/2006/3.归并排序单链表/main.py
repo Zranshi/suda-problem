@@ -19,8 +19,9 @@ def merge_sort_ln(head: ListNode) -> Optional[ListNode]:
         Optional[ListNode]: 排序后的单链表头结点.
     """
 
-    def merge_ln(h1: Optional[ListNode],
-                 h2: Optional[ListNode]) -> Optional[ListNode]:
+    def merge_ln(
+        h1: Optional[ListNode], h2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         """
         合并函数. 将两个排序好的单链表合并为一个排序好的单链表.
 
@@ -47,8 +48,9 @@ def merge_sort_ln(head: ListNode) -> Optional[ListNode]:
             return None
         return d_h.next
 
-    def sort_func(h: Optional[ListNode],
-                  tail: Optional[ListNode] = None) -> Optional[ListNode]:
+    def sort_func(
+        h: Optional[ListNode], tail: Optional[ListNode] = None
+    ) -> Optional[ListNode]:
         """
         递归拆分函数. 拆分直到头结点和尾结点中间仅剩一个结点, 或者没有结点.
         采用快慢指针的方式找到头尾结点的中间结点, 然后拆分为两部分.
@@ -79,7 +81,7 @@ def merge_sort_ln(head: ListNode) -> Optional[ListNode]:
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     h = ListNode(0)
     h.push_head(2)
     h.push_head(4)
@@ -93,6 +95,6 @@ if __name__ == '__main__':
     h.push_head(3)
     h.push_head(1)
     h.push_head(2)
-    print(f'before sort: {h}')
+    print(f"before sort: {h}")
     merge_sort_ln(h)
-    print(f'after sort : {h}')
+    print(f"after sort : {h}")

@@ -39,7 +39,7 @@ def permutations(lst: list) -> List[int]:
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     test_arr = [1, 2, 3]
     for i in permutations(test_arr):
         print(i)

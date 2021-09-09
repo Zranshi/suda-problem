@@ -37,8 +37,9 @@ def leaves_list(tree: TreeNode) -> list:
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     tn = TreeNode.init_by_list(
-        [1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -1, -1, 10, 11, 12])
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -1, -1, 10, 11, 12]
+    )
     if tn:
         print(leaves_list(tn))

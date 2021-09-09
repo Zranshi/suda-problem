@@ -34,6 +34,20 @@ class TreeNode:
             )
             return new_node
 
+    @classmethod
+    def init_balanced_sort_tree(cls, arr: List[Any]):
+        lst = sorted(arr)
+
+        def dfs(le: int, ri: int) -> TreeNode:
+            mid = (le + ri) // 2
+            return TreeNode(
+                val=lst[mid],
+                left=dfs(le, mid - 1) if le != mid else None,
+                right=dfs(mid + 1, ri) if ri != mid else None,
+            )
+
+        return dfs(0, len(lst) - 1)
+
     def __str__(self) -> str:
         dq = deque()
         level_node: List[List[str]] = [[]]
@@ -43,9 +57,11 @@ class TreeNode:
             if idx_level >= len(level_node):
                 level_node.append([])
             if idx:
-                level_node[idx_level].append(str(idx.val))
+                level_node[idx_level].append(f'{idx.val:4}')
                 dq.appendleft((idx.left, idx_level + 1))
                 dq.appendleft((idx.right, idx_level + 1))
+            else:
+                level_node[idx_level].append(f'{-1:4}')
         return '\n'.join(' '.join(item) for item in level_node)
 
 

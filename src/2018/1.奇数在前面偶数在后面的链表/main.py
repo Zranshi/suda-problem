@@ -23,7 +23,7 @@ def check(node: ListNode) -> bool:
 # END
 # TEST
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     s = ListNode.init_list([0, 1, 3, 5, 8, 4, 2])
     if s:
         print(check(s))

@@ -7,8 +7,8 @@
 # START
 def bracket_matching(string: str):
     res, stack = [], []
-    start = {'(': 1, '[': 2, '{': 3}
-    end = {')': 1, ']': 2, '}': 3}
+    start = {"(": 1, "[": 2, "{": 3}
+    end = {")": 1, "]": 2, "}": 3}
     for i, ch in enumerate(string):
         if ch in start:
             stack.append((ch, i))
@@ -24,6 +24,6 @@ def bracket_matching(string: str):
 # END
 
 # TEST
-if __name__ == '__main__':
-    s = '{{()[()](){}}}'
+if __name__ == "__main__":
+    s = "{{()[()](){}}}"
     print(bracket_matching(s))

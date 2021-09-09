@@ -23,5 +23,5 @@ def com_even_odd(arr: List[int]) -> List[int]:
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(com_even_odd([2, 2, 21, 1, 2, 2, 2, 2, 2, 2]))

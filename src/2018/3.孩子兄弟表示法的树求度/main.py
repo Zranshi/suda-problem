@@ -22,5 +22,5 @@ def number_Kdeg(node: CSTreeNode, k: int) -> int:
 # END
 # TEST
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ...

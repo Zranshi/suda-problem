@@ -6,7 +6,6 @@ from src.define import TreeNode
 
 
 class SizeTree(TreeNode):
-
     def __init__(self, val, left, right) -> None:
         super().__init__(val, left=left, right=right)
         self.size = 0
@@ -40,7 +39,7 @@ def add_size(root: SizeTree) -> int:
 # END
 # TEST
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     st = SizeTree.init_by_list([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     if st:
         print(add_size(st))

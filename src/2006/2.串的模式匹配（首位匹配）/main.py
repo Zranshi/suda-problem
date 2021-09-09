@@ -24,7 +24,7 @@ def index(source: str, target: str) -> int:
         return -1
     for i in range(0, len_s - len_t - 1):
         if source[i] == target[0] and source[i + len_t - 1] == target[-1]:
-            if source[i:i + len_t] == target:
+            if source[i : i + len_t] == target:
                 return i
     return -1
 
@@ -32,5 +32,5 @@ def index(source: str, target: str) -> int:
 # END
 
 # TEST
-if __name__ == '__main__':
-    print(index('1243124124124', '12412'))
+if __name__ == "__main__":
+    print(index("1243124124124", "12412"))

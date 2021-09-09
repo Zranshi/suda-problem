@@ -11,13 +11,13 @@ def dijkstra(target_map: Map, node: int):
     pre_node = {node: node}  # 记录路径中的前驱
     v = {node}  # 记录节点是否已经有了最短路径
 
-    for line_node, line_cost in target_map.get_lines(
-            node):  # 先将起始点能直接遍历到的点记入dict中
+    for line_node, line_cost in target_map.get_lines(node):
+        # 先将起始点能直接遍历到的点记入dict中
         point_dict[line_node] = line_cost
         pre_node[line_node] = node
 
     for _ in range(target_map.size - 1):
-        cost, min_node = float('inf'), None  # 寻找当前最小路径的点
+        cost, min_node = float("inf"), None  # 寻找当前最小路径的点
         for index_node in point_dict:
             if index_node not in v and cost > point_dict[index_node]:
                 cost = point_dict[index_node]
@@ -26,8 +26,10 @@ def dijkstra(target_map: Map, node: int):
         v.add(min_node)
 
         for line_node, line_cost in target_map.get_lines(min_node):  # 更新dict
-            if line_node not in point_dict or point_dict[
-                    line_node] > line_cost + cost:
+            if (
+                line_node not in point_dict
+                or point_dict[line_node] > line_cost + cost
+            ):
                 point_dict[line_node] = line_cost + cost
                 pre_node[line_node] = min_node
 
@@ -37,20 +39,20 @@ def dijkstra(target_map: Map, node: int):
 def format_res(cost, pre):
     res_dict = {}
     for node in cost:
-        res_dict[node] = {'cost': cost[node]}
+        res_dict[node] = {"cost": cost[node]}
         path = [str(node)]
         idx = node
         while pre[idx] != idx:
             idx = pre[idx]
             path.append(str(idx))
-        res_dict[node]['path'] = '->'.join(path[::-1])
+        res_dict[node]["path"] = "->".join(path[::-1])
     return res_dict
 
 
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     test_map = {
         1: [(2, 4), (3, 3)],
         2: [(4, 8), (5, 6)],
@@ -59,7 +61,7 @@ if __name__ == '__main__':
         5: [(8, 1), (4, 1)],
         6: [(8, 9)],
         7: [(8, 2)],
-        8: []
+        8: [],
     }
     m = Map(value_map=test_map)
     print(dijkstra(m, 1))

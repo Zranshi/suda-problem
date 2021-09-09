@@ -22,7 +22,7 @@ def remove_x(node: Optional[ListNode], x: int):
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     ln = ListNode.init_list([1, 2, 3, 1, 2, 3, 4, 2, 3])
     print(ln)
     print(remove_x(ln, 2))

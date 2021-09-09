@@ -19,8 +19,9 @@ def remove_item(node: Optional[ListNode], item) -> Optional[ListNode]:
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     ln = ListNode.init_list(
-        [1, 2, 3, 1, 2, 3, 1, 2, 2, 2, 12, 312, 3, 12, 312, 3, 12])
+        [1, 2, 3, 1, 2, 3, 1, 2, 2, 2, 12, 312, 3, 12, 312, 3, 12]
+    )
     print(ln)
     print(remove_item(ln, 2))

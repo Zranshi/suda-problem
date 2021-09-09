@@ -17,5 +17,5 @@ def get_number(x: int) -> int:
 # END
 
 # TEST
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(get_number(11))
