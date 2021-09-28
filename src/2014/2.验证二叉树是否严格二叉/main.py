@@ -2,13 +2,17 @@
 # @Time     : 2021/07/28 11:24
 # @Author   : Ranshi
 # @File     : main.py
-from src.define import TreeNode
+from src.define.Tree import TreeNode
 
 
 # START
 def is_strict_binary(node: TreeNode) -> bool:
     if node.left and node.right:
-        return True and is_strict_binary(node.left) and is_strict_binary(node.right)
+        return (
+            True
+            and is_strict_binary(node.left)
+            and is_strict_binary(node.right)
+        )
     elif node.left or node.right:
         return False
     return True

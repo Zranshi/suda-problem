@@ -4,7 +4,7 @@
 # @File     : main.py
 from typing import Optional
 
-from src.define import ListNode
+from src.define.ListNode import ListNode
 
 
 # START
@@ -19,7 +19,9 @@ def merge_sort_ln(head: ListNode) -> Optional[ListNode]:
         Optional[ListNode]: 排序后的单链表头结点.
     """
 
-    def merge_ln(h1: Optional[ListNode], h2: Optional[ListNode]) -> Optional[ListNode]:
+    def merge_ln(
+        h1: Optional[ListNode], h2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         """
         合并函数. 将两个排序好的单链表合并为一个排序好的单链表.
 

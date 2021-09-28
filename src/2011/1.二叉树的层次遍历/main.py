@@ -4,7 +4,7 @@
 # @File     : main.py
 from typing import Optional
 
-from src.define import TreeNode
+from src.define.Tree import TreeNode
 
 
 # START

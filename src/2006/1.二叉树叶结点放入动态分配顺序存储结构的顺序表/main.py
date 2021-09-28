@@ -2,7 +2,7 @@
 # @Time     : 2021/7/18 20: 40
 # @Author   : Ranshi
 # @File     : main.py
-from src.define import TreeNode
+from src.define.Tree import TreeNode
 
 
 # START
@@ -37,6 +37,8 @@ def leaves_list(tree: TreeNode) -> list:
 
 # TEST
 if __name__ == "__main__":
-    tn = TreeNode.init_by_list([1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -1, -1, 10, 11, 12])
+    tn = TreeNode.init_by_list(
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -1, -1, 10, 11, 12]
+    )
     if tn:
         print(leaves_list(tn))

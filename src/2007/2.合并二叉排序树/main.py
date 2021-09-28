@@ -2,7 +2,7 @@
 # @Time     : 2021/7/20 12: 14
 # @Author   : Ranshi
 # @File     : main.py
-from src.define import TreeNode
+from src.define.Tree import TreeNode
 
 
 # START

@@ -10,7 +10,7 @@ def get_number(x: int) -> int:
     while x != next_num:
         res += 1
         x = next_num
-        next_num = sum([int(item) for item in str(x)])
+        next_num = sum(int(item) for item in str(x))
     return res
 
 

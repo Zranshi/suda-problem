@@ -3,7 +3,7 @@
 # @Author   : Ranshi
 # @File     : main.py
 
-from src.define import CSTreeNode
+from src.define.Matrix import CSTreeNode
 
 
 # START

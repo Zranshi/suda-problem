@@ -2,7 +2,7 @@
 # @Time     : 2021/08/11 17:45
 # @Author   : Ranshi
 # @File     : main.py
-from src.define import ListNode
+from src.define.ListNode import ListNode
 
 
 # START

@@ -2,7 +2,7 @@
 # @Time     : 2021/7/23 16: 42
 # @Author   : Ranshi
 # @File     : main.py
-from src.define import Map
+from src.define.Map import Map
 
 
 # START

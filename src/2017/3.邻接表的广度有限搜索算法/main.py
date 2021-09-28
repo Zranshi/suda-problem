@@ -4,7 +4,7 @@
 # @File     : main.py
 from collections import deque
 
-from src.define import AdjacencyList
+from src.define.Matrix import AdjacencyList
 
 
 # START
