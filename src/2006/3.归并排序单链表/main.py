@@ -19,9 +19,7 @@ def merge_sort_ln(head: ListNode) -> Optional[ListNode]:
         Optional[ListNode]: 排序后的单链表头结点.
     """
 
-    def merge_ln(
-        h1: Optional[ListNode], h2: Optional[ListNode]
-    ) -> Optional[ListNode]:
+    def merge_ln(h1: Optional[ListNode], h2: Optional[ListNode]) -> Optional[ListNode]:
         """
         合并函数. 将两个排序好的单链表合并为一个排序好的单链表.
 
@@ -40,10 +38,7 @@ def merge_sort_ln(head: ListNode) -> Optional[ListNode]:
             else:
                 t.next, t2 = t2, t2.next
             t = t.next
-        if t1:
-            t.next = t1
-        else:
-            t.next = t2
+        t.next = t1 or t2
         if not d_h.next:
             return None
         return d_h.next

@@ -22,10 +22,13 @@ def index(source: str, target: str) -> int:
     len_t = len(target)
     if len_t == 0 or len_s == 0:
         return -1
-    for i in range(0, len_s - len_t - 1):
-        if source[i] == target[0] and source[i + len_t - 1] == target[-1]:
-            if source[i : i + len_t] == target:
-                return i
+    for i in range(len_s - len_t - 1):
+        if (
+            source[i] == target[0]
+            and source[i + len_t - 1] == target[-1]
+            and source[i : i + len_t] == target
+        ):
+            return i
     return -1
 
 

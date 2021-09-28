@@ -11,25 +11,25 @@ def get_quarter(arr: List[int], lo: int = 0, hi: int = 0) -> int:
     k = len(arr) // 4
     if not hi:
         hi = len(arr) - 1
-    if lo < hi and len(arr) >= 4:
-        key = arr[lo]
-        left, right = lo, hi
-        while left < right:
-            while left < right and key < arr[right]:
-                right -= 1
-            arr[left] = arr[right]
-            while left < right and key > arr[left]:
-                left += 1
-            arr[right] = arr[left]
-        arr[left] = key
-        if left == k:
-            return arr[left]
-        elif left < k:
-            return get_quarter(arr, left + 1, hi)
-        else:
-            return get_quarter(arr, lo, left)
-    else:
+    if lo >= hi or len(arr) < 4:
         return -1
+
+    key = arr[lo]
+    left, right = lo, hi
+    while left < right:
+        while left < right and key < arr[right]:
+            right -= 1
+        arr[left] = arr[right]
+        while left < right and key > arr[left]:
+            left += 1
+        arr[right] = arr[left]
+    arr[left] = key
+    if left == k:
+        return arr[left]
+    elif left < k:
+        return get_quarter(arr, left + 1, hi)
+    else:
+        return get_quarter(arr, lo, left)
 
 
 # END

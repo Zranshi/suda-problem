@@ -8,7 +8,6 @@ from typing import Any, List, Optional
 
 
 class TreeNode:
-
     def __init__(self, val, left, right) -> None:
         self.val = val
         self.left = left
@@ -19,7 +18,7 @@ class TreeNode:
         cls,
         arr: List[Any],
         idx: int = 0,
-    ) -> Optional['TreeNode']:
+    ) -> Optional["TreeNode"]:
         """
         使用列表初始化一个二叉树
         :param arr:
@@ -27,12 +26,11 @@ class TreeNode:
         :return:
         """
         if idx < len(arr) and arr[idx]:
-            new_node = TreeNode(
+            return TreeNode(
                 val=arr[idx],
                 left=TreeNode.init_by_list(arr, idx * 2 + 1),
                 right=TreeNode.init_by_list(arr, idx * 2 + 2),
             )
-            return new_node
 
     @classmethod
     def init_balanced_sort_tree(cls, arr: List[Any]):
@@ -57,16 +55,15 @@ class TreeNode:
             if idx_level >= len(level_node):
                 level_node.append([])
             if idx:
-                level_node[idx_level].append(f'{idx.val:4}')
+                level_node[idx_level].append(f"{idx.val:4}")
                 dq.appendleft((idx.left, idx_level + 1))
                 dq.appendleft((idx.right, idx_level + 1))
             else:
-                level_node[idx_level].append(f'{-1:4}')
-        return '\n'.join(' '.join(item) for item in level_node)
+                level_node[idx_level].append(f"{-1:4}")
+        return "\n".join(" ".join(item) for item in level_node)
 
 
 class CSTreeNode:
-
     def __init__(self, val, child, next_sibling) -> None:
         """
         采用孩子兄弟法存储的树结构
@@ -89,23 +86,22 @@ class CSTreeNode:
                 if idx.child:
                     dfs(idx.child)
 
-        return ' '.join(res)
+        return " ".join(res)
 
 
 class SearchTree(TreeNode):
-
     def __init__(
         self,
         val: int,
-        left: Optional['SearchTree'] = None,
-        right: Optional['SearchTree'] = None,
+        left: Optional["SearchTree"] = None,
+        right: Optional["SearchTree"] = None,
         r_size: int = 1,
     ) -> None:
         TreeNode.__init__(self, val, left, right)
         self.r_size = r_size
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     l1 = [i for i in range(1, 50)]
     tr = SearchTree.init_by_list(l1)
     print(tr)

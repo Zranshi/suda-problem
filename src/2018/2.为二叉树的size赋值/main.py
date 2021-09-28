@@ -19,12 +19,11 @@ class SizeTree(TreeNode):
         :return:
         """
         if idx < len(arr) and arr[idx]:
-            new_node = SizeTree(
+            return SizeTree(
                 val=arr[idx],
                 left=SizeTree.init_by_list(arr, idx * 2 + 1),
                 right=SizeTree.init_by_list(arr, idx * 2 + 2),
             )
-            return new_node
 
 
 # START

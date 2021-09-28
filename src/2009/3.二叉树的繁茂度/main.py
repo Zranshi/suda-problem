@@ -11,13 +11,14 @@ from src.define import TreeNode
 def get_depth(t: Optional[TreeNode]) -> int:
     if not t:
         return 0
-    if not t.left and not t.right:
-        return 1
-    else:
+    if t.left or t.right:
         return max(
             0 if not t.left else 1 + get_depth(t.left),
             0 if not t.right else 1 + get_depth(t.right),
         )
+
+    else:
+        return 1
 
 
 def get_max_width(t: Optional[TreeNode]) -> int:

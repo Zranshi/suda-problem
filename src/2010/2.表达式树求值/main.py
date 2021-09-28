@@ -9,12 +9,12 @@ from src.define import TreeNode
 
 # START
 def calculate(t: Optional[TreeNode]) -> int:
-    if t:
-        if not t.left and not t.right:
-            return t.val
-        return eval(f"{calculate(t.left)}{t.val}{calculate(t.right)}")
-    else:
+    if not t:
         return -1
+
+    if not t.left and not t.right:
+        return t.val
+    return eval(f"{calculate(t.left)}{t.val}{calculate(t.right)}")
 
 
 # END

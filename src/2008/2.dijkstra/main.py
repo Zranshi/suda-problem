@@ -18,8 +18,8 @@ def dijkstra(target_map: Map, node: int):
 
     for _ in range(target_map.size - 1):
         cost, min_node = float("inf"), None  # 寻找当前最小路径的点
-        for index_node in point_dict:
-            if index_node not in v and cost > point_dict[index_node]:
+        for index_node, value in point_dict.items():
+            if index_node not in v and cost > value:
                 cost = point_dict[index_node]
                 min_node = index_node
 

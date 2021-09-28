@@ -10,9 +10,7 @@ from src.define import TreeNode
 
 
 # START
-def init_tree_by_list(
-    chs: Optional[List[str]], idx: int = 0
-) -> Optional[TreeNode]:
+def init_tree_by_list(chs: Optional[List[str]], idx: int = 0) -> Optional[TreeNode]:
     if chs and idx < len(chs):
         return TreeNode(
             val=chs[idx],

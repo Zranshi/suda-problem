@@ -31,9 +31,8 @@ def bracket_matching(string: str) -> List[Tuple[int, int]]:
         if ch in end:
             if end[ch] != start[stack[-1][0]]:
                 return None
-            else:
-                res.append((stack[-1][1], i))
-                stack.pop()
+            res.append((stack[-1][1], i))
+            stack.pop()
     return res if not stack else None
 
 

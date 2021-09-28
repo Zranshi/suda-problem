@@ -13,9 +13,8 @@ def check(node: ListNode) -> bool:
         if cur.val % 2 == 0:
             if flag:
                 flag = False
-        else:
-            if not flag:
-                return False
+        elif not flag:
+            return False
         cur = cur.next
     return True
 

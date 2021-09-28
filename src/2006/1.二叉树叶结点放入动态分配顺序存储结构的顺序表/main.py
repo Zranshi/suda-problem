@@ -24,11 +24,10 @@ def leaves_list(tree: TreeNode) -> list:
     def dfs(root: TreeNode):
         if not root.left and not root.right and root.val != -1:
             head.append(root.val)
-        else:
-            if root.left:
-                dfs(root.left)
-            if root.right:
-                dfs(root.right)
+        if root.left:
+            dfs(root.left)
+        if root.right:
+            dfs(root.right)
 
     dfs(tree)
     return head
@@ -38,8 +37,6 @@ def leaves_list(tree: TreeNode) -> list:
 
 # TEST
 if __name__ == "__main__":
-    tn = TreeNode.init_by_list(
-        [1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -1, -1, 10, 11, 12]
-    )
+    tn = TreeNode.init_by_list([1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -1, -1, 10, 11, 12])
     if tn:
         print(leaves_list(tn))

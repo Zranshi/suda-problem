@@ -6,7 +6,6 @@ from typing import Any, Iterable, List, Optional
 
 
 class LinkList:
-
     def __init__(self):
         self.head = ListNode()
         self.tail = self.head
@@ -20,12 +19,11 @@ class LinkList:
         while cur:
             res.append(str(cur.val))
             cur = cur.next
-        return '->'.join(res)
+        return "->".join(res)
 
 
 class ListNode:
-
-    def __init__(self, val: int = 0, _next: Optional['ListNode'] = None):
+    def __init__(self, val: int = 0, _next: Optional["ListNode"] = None):
         self.val = val
         self.next = _next
 
@@ -38,10 +36,10 @@ class ListNode:
         while cur:
             res.append(str(cur.val))
             cur = cur.next
-        return '->'.join(res)
+        return "->".join(res)
 
     @classmethod
-    def init_list(cls, arr: List[Any]) -> Optional['ListNode']:
+    def init_list(cls, arr: List[Any]) -> Optional["ListNode"]:
         head = ListNode()
         cur = head
         for x in arr:
@@ -51,17 +49,18 @@ class ListNode:
 
 
 class DulLinkedList:
-
-    def __init__(self,
-                 val: int = 0,
-                 _next: Optional['DulLinkedList'] = None,
-                 pre: Optional['DulLinkedList'] = None) -> None:
+    def __init__(
+        self,
+        val: int = 0,
+        _next: Optional["DulLinkedList"] = None,
+        pre: Optional["DulLinkedList"] = None,
+    ) -> None:
         self.val = val
         self.next = _next
         self.pre = pre
 
     @classmethod
-    def init_by_list(cls, vals: Iterable) -> Optional['DulLinkedList']:
+    def init_by_list(cls, vals: Iterable) -> Optional["DulLinkedList"]:
         head = DulLinkedList()
         cur = head
         for x in vals:
@@ -75,4 +74,4 @@ class DulLinkedList:
         while cur:
             res.append(str(cur.val))
             cur = cur.next
-        return '<->'.join(res)
+        return "<->".join(res)

@@ -21,11 +21,10 @@ def insert_node(tree: TreeNode, target: TreeNode):
             insert_node(tree.left, target)
         else:
             tree.left = target
+    elif tree.right:
+        insert_node(tree.right, target)
     else:
-        if tree.right:
-            insert_node(tree.right, target)
-        else:
-            tree.right = target
+        tree.right = target
 
 
 def merge_search_tree(tree: TreeNode, target: TreeNode) -> TreeNode:

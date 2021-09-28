@@ -8,11 +8,7 @@ from src.define import TreeNode
 # START
 def is_strict_binary(node: TreeNode) -> bool:
     if node.left and node.right:
-        return (
-            True
-            and is_strict_binary(node.left)
-            and is_strict_binary(node.right)
-        )
+        return True and is_strict_binary(node.left) and is_strict_binary(node.right)
     elif node.left or node.right:
         return False
     return True

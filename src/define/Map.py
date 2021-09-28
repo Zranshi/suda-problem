@@ -9,7 +9,6 @@ from src.define.ListNode import LinkList
 
 
 class Map(object):
-
     def __init__(self, value_map: Dict[Any, List[Tuple[Any]]]):
         """
         构造函数，根据一个字典构造带权值有向图
@@ -29,14 +28,12 @@ class Map(object):
         :return:
         """
         if node in self.lines:
-            for line in self.lines[node]:
-                yield line
+            yield from self.lines[node]
         else:
             return None
 
 
 class AdjacencyList(object):
-
     def __init__(self, value_map: dict) -> None:
         """构造函数，根据一个字典构造带权值有向图
 
@@ -48,8 +45,8 @@ class AdjacencyList(object):
                 } 所表示的图
         """
         self.graph = defaultdict(LinkList)
-        for key in value_map:
-            for line in value_map[key]:
+        for key, value in value_map.items():
+            for line in value:
                 self.graph[key].push_tail(line[0])
                 self.graph[key].head.val += 1
 
