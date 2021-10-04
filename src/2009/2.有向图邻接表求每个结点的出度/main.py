@@ -2,27 +2,41 @@
 # @Time     : 2021/7/23 16: 42
 # @Author   : Ranshi
 # @File     : main.py
-from src.define.Map import Map
+from src.define import ArcGraph, ArcNode, VNode
 
 
 # START
-def get_out_degree(m: Map) -> dict:
-    return {point: len(m.lines[point]) for point in m.lines}
+def get_in_and_out(g: ArcGraph):
+    """
+    根据顺序表的结构, 初始化每个节点的出度和入读.
+
+    Args:
+        g (ArcGraph): 顺序表.
+    """
+    for l in g.graph:
+        p = l.first_arc
+        while p:
+            l.out_degree += 1
+            g.graph[p.target - 1].in_degree += 1
+            p = p.next
 
 
 # END
 
 # TEST
 if __name__ == "__main__":
-    test_map = {
-        1: [(2, 4), (3, 3)],
-        2: [(4, 8), (5, 6)],
-        3: [(5, 7), (6, 8)],
-        4: [(7, 3)],
-        5: [(8, 1), (4, 1)],
-        6: [(8, 9)],
-        7: [(8, 2)],
-        8: [],
-    }
-    m = Map(value_map=test_map)
-    print(get_out_degree(m))
+    m = ArcGraph(
+        arc=11,
+        vex=8,
+        graph=[
+            VNode(data=23, first_arc=ArcNode.init_by_list([(2, 4), (3, 3)])),
+            VNode(data=45, first_arc=ArcNode.init_by_list([(4, 8), (5, 6)])),
+            VNode(data=73, first_arc=ArcNode.init_by_list([(5, 7), (6, 8)])),
+            VNode(data=13, first_arc=ArcNode.init_by_list([(7, 3)])),
+            VNode(data=67, first_arc=ArcNode.init_by_list([(8, 1), (4, 1)])),
+            VNode(data=45, first_arc=ArcNode.init_by_list([(8, 9)])),
+            VNode(data=63, first_arc=ArcNode.init_by_list([(8, 2)])),
+            VNode(data=74, first_arc=ArcNode.init_by_list([])),
+        ],
+    )
+    get_in_and_out(m)

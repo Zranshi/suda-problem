@@ -4,7 +4,7 @@
 # @File     : main.py
 from typing import Optional
 
-from src.define.ListNode import ListNode
+from src.define import ListNode
 
 
 # START
@@ -23,6 +23,6 @@ def remove_x(node: Optional[ListNode], x: int):
 
 # TEST
 if __name__ == "__main__":
-    ln = ListNode.init_list([1, 2, 3, 1, 2, 3, 4, 2, 3])
+    ln = ListNode.init_by_list([1, 2, 3, 1, 2, 3, 4, 2, 3])
     print(ln)
     print(remove_x(ln, 2))

@@ -4,7 +4,7 @@
 # @File     : main.py
 from typing import Optional
 
-from src.define.ListNode import ListNode
+from src.define import ListNode
 
 
 # START

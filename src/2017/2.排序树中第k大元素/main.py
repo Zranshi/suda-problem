@@ -4,7 +4,7 @@
 # @File     : main.py
 from typing import Optional
 
-from src.define.Tree import SearchTree
+from src.define import SearchTree
 
 
 # START

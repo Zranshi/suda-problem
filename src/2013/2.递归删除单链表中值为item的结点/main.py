@@ -4,7 +4,7 @@
 # @File     : main.py
 from typing import Optional
 
-from src.define.ListNode import ListNode
+from src.define import ListNode
 
 
 # START
@@ -20,7 +20,7 @@ def remove_item(node: Optional[ListNode], item) -> Optional[ListNode]:
 
 # TEST
 if __name__ == "__main__":
-    ln = ListNode.init_list(
+    ln = ListNode.init_by_list(
         [1, 2, 3, 1, 2, 3, 1, 2, 2, 2, 12, 312, 3, 12, 312, 3, 12]
     )
     print(ln)

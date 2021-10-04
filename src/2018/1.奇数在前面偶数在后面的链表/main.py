@@ -2,7 +2,7 @@
 # @Time     : 2021/08/11 17:45
 # @Author   : Ranshi
 # @File     : main.py
-from src.define.ListNode import ListNode
+from src.define import ListNode
 
 
 # START
@@ -23,6 +23,6 @@ def check(node: ListNode) -> bool:
 # TEST
 
 if __name__ == "__main__":
-    s = ListNode.init_list([0, 1, 3, 5, 8, 4, 2])
+    s = ListNode.init_by_list([0, 1, 3, 5, 8, 4, 2])
     if s:
         print(check(s))

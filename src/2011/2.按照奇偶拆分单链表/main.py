@@ -4,7 +4,7 @@
 # @File     : main.py
 from typing import Optional
 
-from src.define.ListNode import ListNode
+from src.define import ListNode
 
 
 # START
@@ -35,6 +35,6 @@ def split_link(node: Optional[ListNode]):
 
 # TEST
 if __name__ == "__main__":
-    ln = ListNode.init_list(list("0123456789"))
+    ln = ListNode.init_by_list(list("0123456789"))
     e, o = split_link(ln)
     print(e, o)

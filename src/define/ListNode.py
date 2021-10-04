@@ -39,7 +39,7 @@ class ListNode:
         return "->".join(res)
 
     @classmethod
-    def init_list(cls, arr: List[Any]) -> Optional["ListNode"]:
+    def init_by_list(cls, arr: List[Any]) -> Optional["ListNode"]:
         head = ListNode()
         cur = head
         for x in arr:

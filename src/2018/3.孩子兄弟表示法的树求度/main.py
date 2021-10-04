@@ -2,8 +2,7 @@
 # @Time     : 2021/08/11 18:10
 # @Author   : Ranshi
 # @File     : main.py
-
-from src.define.Matrix import CSTreeNode
+from src.define import CSTreeNode
 
 
 # START

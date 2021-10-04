@@ -2,7 +2,7 @@
 # @Time     : 2021/08/11 17:53
 # @Author   : Ranshi
 # @File     : main.py
-from src.define.Tree import TreeNode
+from src.define import TreeNode
 
 
 class SizeTree(TreeNode):

@@ -4,7 +4,7 @@
 # @File     : main.py
 from typing import Set
 
-from src.define.ListNode import DulLinkedList
+from src.define import DulLinkedList
 
 
 # START

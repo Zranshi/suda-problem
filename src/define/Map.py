@@ -3,7 +3,7 @@
 # @Author   : Ranshi
 # @File     : Map.py
 from collections import defaultdict
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 from src.define.ListNode import LinkList
 
@@ -52,3 +52,57 @@ class AdjacencyList(object):
 
     def get_next_node(self, node: int):
         return self.graph[node].head.next
+
+
+class ArcNode(object):
+    """
+    顺序表的边节点类, 是一个链表结构的用于保存指向节点和权重的链表.
+    实现了通过list初始化的功能.
+    """
+
+    def __init__(
+        self, target: int = 0, weight: int = 0, next: Optional["ArcNode"] = None
+    ) -> None:
+        self.target = target
+        self.weight = weight
+        self.next = next
+
+    @classmethod
+    def init_by_list(cls, arr: List[Any]) -> Optional["ArcNode"]:
+        head = ArcNode()
+        cur = head
+        for x in arr:
+            node = ArcNode(target=x[0], weight=x[1], next=None)
+            cur.next, cur = node, node
+        return head.next
+
+
+class VNode(object):
+    """
+    顺序表的节点类, 记录了当前节点的数据、出度、入度和边度单链表.
+    """
+
+    def __init__(
+        self,
+        data: int = 0,
+        in_degree: int = 0,
+        out_degree: int = 0,
+        first_arc: Optional[ArcNode] = ArcNode(),
+    ) -> None:
+        self.data = data
+        self.in_degree = in_degree
+        self.out_degree = out_degree
+        self.first_arc = first_arc
+
+
+class ArcGraph(object):
+    """
+    顺序表类, 记录了边的数量和节点的数量, 以及一个节点的列表, 用于描述图的结构.
+    """
+
+    def __init__(
+        self, graph: List[VNode] = [], vex: int = 0, arc: int = 0
+    ) -> None:
+        self.graph = graph
+        self.vex_num = vex
+        self.arc_num = arc
