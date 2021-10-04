@@ -9,6 +9,15 @@ from src.define import TreeNode
 
 # START
 def get_depth(t: Optional[TreeNode]) -> int:
+    """
+    由顶到下的递归操作, 每次取左子树和右子树中高度较大的一颗子树, 就能得到树的深度.
+
+    Args:
+        t (Optional[TreeNode]): 树
+
+    Returns:
+        int: 树的深度.
+    """
     if not t:
         return 0
     if t.left or t.right:
@@ -21,29 +30,34 @@ def get_depth(t: Optional[TreeNode]) -> int:
         return 1
 
 
-def get_max_width(t: Optional[TreeNode]) -> int:
-    from collections import deque
+def get_width(t: Optional[TreeNode]) -> int:
+    """
+    遍历每一层, res取所有层宽度的最大值, 就能找到树的宽度.
 
-    dq = deque()
-    dq.appendleft(t)
-    level_num, res, next_level = 1, 0, 0
-    while dq:
-        idx = dq.pop()
-        if idx.left:
-            dq.appendleft(idx.left)
-            next_level += 1
-        if idx.right:
-            dq.appendleft(idx.right)
-            next_level += 1
-        level_num -= 1
-        if level_num == 0:
-            res = max(res, next_level)
-            level_num, next_level = next_level, 0
+    Args:
+        t (Optional[TreeNode]): 树
+
+    Returns:
+        int: 树的宽度.
+    """
+    if not t:
+        return 0
+    lst = [t]
+    res = 0
+    while lst:
+        new_lst = []
+        res = max(res, len(lst))
+        for node in lst:
+            if node.left:
+                new_lst.append(node.left)
+            if node.right:
+                new_lst.append(node.right)
+        lst = new_lst
     return res
 
 
 def get_luxuriant(t: Optional[TreeNode]) -> int:
-    return get_depth(t) * get_max_width(t)
+    return get_depth(t) * get_width(t)
 
 
 # END
