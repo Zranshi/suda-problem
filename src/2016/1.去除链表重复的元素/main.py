@@ -23,7 +23,7 @@ def copy_without_same_node(node: ListNode) -> ListNode:
 if __name__ == "__main__":
     head = ListNode(
         val=0,
-        _next=ListNode.init_by_list([1, 23, 1, 1, 1, 3, 3, 4, 1, 4, 5, 6, 7]),
+        next=ListNode.init_by_list([1, 23, 1, 1, 1, 3, 3, 4, 1, 4, 5, 6, 7]),
     )
     print(head.next)
     new_head = copy_without_same_node(head)

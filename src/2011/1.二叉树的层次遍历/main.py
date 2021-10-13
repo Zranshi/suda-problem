@@ -2,25 +2,33 @@
 # @Time     : 2021/7/25 10:49
 # @Author   : Ranshi
 # @File     : main.py
-from typing import Optional
+from typing import Generator, Optional
 
 from src.define import TreeNode
 
-
 # START
-def level_order(node: Optional[TreeNode]) -> list:
-    from collections import deque
+def level_order(node: Optional[TreeNode]) -> Generator:
+    """
+    二叉树的层序遍历.
 
-    dq, res = deque(), []
-    dq.appendleft(node)
-    while dq:
-        idx = dq.pop()
-        res.append(idx.val)
-        if idx.left:
-            dq.appendleft(idx.left)
-        if idx.right:
-            dq.appendleft(idx.right)
-    return res
+    Args:
+        node (Optional[TreeNode]): 二叉树.
+
+    Yields:
+        Generator: 返回一个层序遍历二叉树的生成器.
+    """
+    if node is None:
+        return None
+    level = [node]
+    while level:
+        new_level = []
+        for item in level:
+            yield item
+            if item.left:
+                new_level.append(item.left)
+            if item.right:
+                new_level.append(item.right)
+        level = new_level
 
 
 # END
@@ -30,4 +38,4 @@ if __name__ == "__main__":
     tree = TreeNode.init_by_list(
         [item if item != " " else "" for item in "123456 7 89"]
     )
-    print(level_order(tree))
+    print([item.val for item in level_order(tree)])

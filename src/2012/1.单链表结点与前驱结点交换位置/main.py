@@ -10,7 +10,7 @@ from src.define import ListNode
 # START
 def change(node: Optional[ListNode], i: int) -> Optional[ListNode]:
     idx = 1
-    head = ListNode(val=0, _next=node)
+    head = ListNode(val=0, next=node)
     cur = head
     while cur.next:
         if idx == i:

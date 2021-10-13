@@ -8,11 +8,21 @@ from src.define import ListNode
 
 
 # START
-def remove_x(node: Optional[ListNode], x: int):
-    head = ListNode(val=-1, _next=node)
+def remove_x(node: Optional[ListNode], target: int):
+    """
+    删除所有节点值为target的节点, 需要注意应该判断cur.next的值.
+
+    Args:
+        node (Optional[ListNode]): 单链表
+        target (int): 目标值
+
+    Returns:
+        [type]: 删除后的单链表
+    """
+    head = ListNode(val=-1, next=node)
     cur = head
     while cur.next:
-        if cur.next.val == x:
+        if cur.next.val == target:
             cur.next = cur.next.next
         else:
             cur = cur.next

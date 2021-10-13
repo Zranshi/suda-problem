@@ -47,20 +47,20 @@ class TreeNode:
         return dfs(0, len(lst) - 1)
 
     def __str__(self) -> str:
-        dq = deque()
-        level_node: List[List[str]] = [[]]
-        dq.appendleft((self, 0))
-        while dq:
-            idx, idx_level = dq.pop()
-            if idx_level >= len(level_node):
-                level_node.append([])
-            if idx:
-                level_node[idx_level].append(f"{idx.val:4}")
-                dq.appendleft((idx.left, idx_level + 1))
-                dq.appendleft((idx.right, idx_level + 1))
-            else:
-                level_node[idx_level].append(f"{-1:4}")
-        return "\n".join(" ".join(item) for item in level_node)
+        level = [self]
+        res = []
+        while any(level):
+            res.append(
+                " ".join(f"{item.val:<4}" if item else "None" for item in level)
+            )
+            next_level = [None] * len(level) * 2
+            for i, item in enumerate(level):
+                next_level[i * 2] = item.left if item and item.left else None
+                next_level[i * 2 + 1] = (
+                    item.right if item and item.right else None
+                )
+            level = next_level
+        return "\n".join(res)
 
 
 class CSTreeNode:

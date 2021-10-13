@@ -9,6 +9,15 @@ from src.define import TreeNode
 
 # START
 def calculate(t: Optional[TreeNode]) -> int:
+    """
+    求解计算树的值.
+
+    Args:
+        t (Optional[TreeNode]): 计算树, 叶子节点为数值, 节点为运算符.
+
+    Returns:
+        int: 求解的值.
+    """
     if not t:
         return -1
 

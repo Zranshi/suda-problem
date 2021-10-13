@@ -8,26 +8,24 @@ from src.define import TreeNode
 
 
 # START
-def get_depth(t: Optional[TreeNode]) -> int:
+def get_depth(root: Optional[TreeNode]) -> int:
     """
     由顶到下的递归操作, 每次取左子树和右子树中高度较大的一颗子树, 就能得到树的深度.
 
     Args:
-        t (Optional[TreeNode]): 树
+        root (Optional[TreeNode]): 树
 
     Returns:
         int: 树的深度.
     """
-    if not t:
-        return 0
-    if t.left or t.right:
-        return max(
-            0 if not t.left else 1 + get_depth(t.left),
-            0 if not t.right else 1 + get_depth(t.right),
+    return (
+        max(
+            get_depth(root.left) + 1 if root.left else 1,
+            get_depth(root.right) + 1 if root.right else 1,
         )
-
-    else:
-        return 1
+        if root
+        else 0
+    )
 
 
 def get_width(t: Optional[TreeNode]) -> int:
@@ -65,6 +63,6 @@ def get_luxuriant(t: Optional[TreeNode]) -> int:
 # TEST
 if __name__ == "__main__":
     tn = TreeNode.init_by_list(
-        [1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -1, -1, 10, 11, 12]
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, None, None, None, 10, 11, 12]
     )
     print(get_luxuriant(tn))

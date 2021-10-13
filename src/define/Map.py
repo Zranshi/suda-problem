@@ -4,7 +4,6 @@
 # @File     : Map.py
 from collections import defaultdict
 from typing import Any, Dict, List, Optional, Tuple
-
 from src.define.ListNode import LinkList
 
 
@@ -39,10 +38,10 @@ class AdjacencyList(object):
 
         Args:
             value_map (dict): 形如：{
-                    start_node : [(end_node11, cost11), (end_node12, cost12)...]
-                    start_node : [(end_node21, cost21), (end_node22, cost22)...]
-                    ...
-                } 所表示的图
+                start_node : [(end_node11, cost11), (end_node12, cost12)...]
+                start_node : [(end_node21, cost21), (end_node22, cost22)...]
+                ...
+            } 所表示的图
         """
         self.graph = defaultdict(LinkList)
         for key, value in value_map.items():
