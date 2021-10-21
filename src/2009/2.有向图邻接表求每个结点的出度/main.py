@@ -13,10 +13,10 @@ def get_in_and_out(g: ArcGraph):
     Args:
         g (ArcGraph): 顺序表.
     """
-    for l in g.graph:
-        p = l.first_arc
+    for line in g.graph:
+        p = line.first_arc
         while p:
-            l.out_degree += 1
+            line.out_degree += 1
             g.graph[p.target - 1].in_degree += 1
             p = p.next
 

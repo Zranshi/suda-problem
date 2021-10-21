@@ -3,9 +3,7 @@
 # @Author   : Ranshi
 # @File     : main.py
 from typing import Optional
-
-from src.define import ListNode
-
+from pyal.container import ListNode
 
 # START
 def remove_x(node: Optional[ListNode], target: int):
