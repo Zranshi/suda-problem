@@ -4,7 +4,7 @@
 # @File     : main.py
 from typing import Optional
 
-from src.define import ListNode
+from pyal.container import ListNode
 
 
 # START
@@ -35,12 +35,6 @@ def remove_same(node: Optional[ListNode]) -> Optional[ListNode]:
 
 # TEST
 if __name__ == "__main__":
-    head = ListNode(val=-1)
-    head.push_head(2)
-    head.push_head(3)
-    head.push_head(4)
-    head.push_head(2)
-    head.push_head(4)
-    print(head)
-    remove_same(head)
-    print(head)
+    ln = ListNode.init_by_lst([2, 3, 4, 2, 4])
+    remove_same(ln)
+    print(ln)

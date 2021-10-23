@@ -4,7 +4,7 @@
 # @File     : main.py
 from typing import Optional
 
-from src.define import ListNode
+from pyal.container import ListNode
 
 
 # START
@@ -33,7 +33,7 @@ def remove_item(node: Optional[ListNode], target) -> Optional[ListNode]:
 
 # TEST
 if __name__ == "__main__":
-    ln = ListNode.init_by_list(
+    ln = ListNode.init_by_lst(
         [1, 2, 3, 1, 2, 3, 1, 2, 2, 2, 12, 312, 3, 12, 312, 3, 12]
     )
     print(ln)

@@ -4,7 +4,8 @@
 # @File     : main.py
 from typing import Optional
 
-from src.define import TreeNode
+# from src.define import TreeNode
+from pyal.container import TreeNode
 
 
 # START
@@ -62,7 +63,7 @@ def get_luxuriant(t: Optional[TreeNode]) -> int:
 
 # TEST
 if __name__ == "__main__":
-    tn = TreeNode.init_by_list(
+    tn = TreeNode.init_by_lst(
         [1, 2, 3, 4, 5, 6, 7, 8, 9, None, None, None, 10, 11, 12]
     )
     print(get_luxuriant(tn))

@@ -3,7 +3,8 @@
 # @Author   : Ranshi
 # @File     : main.py
 from typing import List, Optional
-from src.define import TreeNode
+
+from pyal.container import TreeNode
 
 
 # START

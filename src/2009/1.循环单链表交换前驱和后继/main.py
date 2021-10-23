@@ -2,7 +2,8 @@
 # @Time     : 2021/7/23 16: 39
 # @Author   : Ranshi
 # @File     : main.py
-from src.define import ListNode
+# from src.define import ListNode
+from pyal.container import ListNode
 
 
 # START
@@ -25,4 +26,4 @@ def change_pre_post(node: ListNode):
 # END
 # TEST
 if __name__ == "__main__":
-    node = ListNode.init_by_list([1, 3, 4, 1, 2, 4, 56, 7])
+    node = ListNode.init_by_lst([1, 3, 4, 1, 2, 4, 56, 7])

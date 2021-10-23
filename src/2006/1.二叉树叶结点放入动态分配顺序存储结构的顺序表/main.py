@@ -2,7 +2,7 @@
 # @Time     : 2021/7/18 20: 40
 # @Author   : Ranshi
 # @File     : main.py
-from src.define import TreeNode
+from pyal.container import TreeNode
 
 
 # START

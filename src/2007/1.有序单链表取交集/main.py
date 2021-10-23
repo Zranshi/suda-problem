@@ -2,7 +2,8 @@
 # @Time     : 2021/7/20 11: 41
 # @Author   : Ranshi
 # @File     : main.py
-from src.define import ListNode
+# from src.define import ListNode
+from pyal.container import ListNode
 
 
 # START
@@ -40,7 +41,7 @@ def intersection(l1: ListNode, l2: ListNode) -> ListNode:
 
 # TEST
 if __name__ == "__main__":
-    a = ListNode.init_by_list([1, 2, 3, 4, 5, 7])
-    b = ListNode.init_by_list([1, 2, 4, 7, 8])
+    a = ListNode.init_by_lst([1, 2, 3, 4, 5, 7])
+    b = ListNode.init_by_lst([1, 2, 4, 7, 8])
     if a and b:
         print(intersection(a, b))

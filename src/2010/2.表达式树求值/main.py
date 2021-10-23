@@ -4,7 +4,8 @@
 # @File     : main.py
 from typing import Optional
 
-from src.define import TreeNode
+# from src.define import TreeNode
+from pyal.container import TreeNode
 
 
 # START
@@ -30,7 +31,7 @@ def calculate(t: Optional[TreeNode]) -> int:
 
 # TEST
 if __name__ == "__main__":
-    et = TreeNode.init_by_list(
+    et = TreeNode.init_by_lst(
         [item if item != " " else "" for item in "+-*15-7    89  "]
     )
     print(calculate(et))

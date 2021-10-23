@@ -2,8 +2,6 @@
 # @Time     : 2021/07/28 09:48
 # @Author   : Ranshi
 # @File     : main.py
-from typing import Optional
-
 from pyal.container import ListNode
 
 

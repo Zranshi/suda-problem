@@ -3,7 +3,8 @@
 # @Author   : Ranshi
 # @File     : main.py
 from typing import Optional
-from src.define import ListNode
+
+from pyal.container import ListNode
 
 
 # START
@@ -31,6 +32,6 @@ def split_linked_list(node: Optional[ListNode]) -> tuple[ListNode, ListNode]:
 
 # TEST
 if __name__ == "__main__":
-    ln = ListNode.init_by_list([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    ln = ListNode.init_by_lst([1, 2, 3, 4, 5, 6, 7, 8, 9])
     e, o = split_linked_list(ln)
     print(e, o)

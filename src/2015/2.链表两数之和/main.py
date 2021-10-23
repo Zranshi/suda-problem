@@ -4,7 +4,7 @@
 # @File     : main.py
 from typing import Set
 
-from src.define import DulLinkedList
+from pyal.container import DulLinkedList
 
 
 # START
@@ -41,6 +41,6 @@ def two_sum2(node: DulLinkedList, target: int) -> str:
 
 # TEST
 if __name__ == "__main__":
-    dll = DulLinkedList.init_by_list(arr=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+    dll = DulLinkedList.init_by_list([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
     if dll:
         print(two_sum2(dll, 16))

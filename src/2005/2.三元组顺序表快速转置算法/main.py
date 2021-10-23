@@ -2,7 +2,7 @@
 # @Time     : 2021/7/18 17: 00
 # @Author   : Ranshi
 # @File     : main.py
-from src.define import Triple, TSMatrix
+from pyal.container import Triple, TSMatrix
 
 
 # START
