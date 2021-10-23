@@ -4,6 +4,7 @@
 # @File     : ListNode.py
 from typing import Any, Iterable, List, Optional
 
+
 class LinkList(object):
     def __init__(self):
         self.head = ListNode()
@@ -61,20 +62,20 @@ class ListNode(object):
 
 class DulLinkedList:
     def __init__(
-        self,
-        val: int = 0,
-        _next: Optional["DulLinkedList"] = None,
-        pre: Optional["DulLinkedList"] = None,
+            self,
+            val: int = 0,
+            _next: Optional["DulLinkedList"] = None,
+            pre: Optional["DulLinkedList"] = None,
     ) -> None:
         self.val = val
         self.next = _next
         self.pre = pre
 
     @classmethod
-    def init_by_list(cls, vals: Iterable) -> Optional["DulLinkedList"]:
+    def init_by_list(cls, arr: Iterable) -> Optional["DulLinkedList"]:
         head = DulLinkedList()
         cur = head
-        for x in vals:
+        for x in arr:
             node = DulLinkedList(val=x, pre=cur)
             cur.next, cur = node, node
         return head.next

@@ -3,8 +3,7 @@
 # @Author   : Ranshi
 # @File     : main.py
 from typing import Optional
-
-from src.define import ListNode
+from pyal.container import ListNode
 
 
 # START
@@ -18,7 +17,8 @@ def get_prime_factor(num: int) -> Optional["ListNode"]:
                     break
             else:
                 cur.next = ListNode(idx)
-                cur, num = cur.next, num // idx
+                cur = cur.next
+                num //= idx
                 idx += 1
         idx -= 1
     return head.next
@@ -27,5 +27,5 @@ def get_prime_factor(num: int) -> Optional["ListNode"]:
 # END
 # TEST
 if __name__ == "__main__":
-    ln = get_prime_factor(2200)
+    ln = get_prime_factor(2100)
     print(ln)
