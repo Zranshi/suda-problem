@@ -3,11 +3,24 @@
 # @Author   : Ranshi
 # @File     : main.py
 from typing import Optional
+
 from pyal.container import ListNode
 
 
 # START
-def get_prime_factor(num: int) -> Optional["ListNode"]:
+def get_prime_factor(num: int) -> ListNode:
+    """
+    将一个正整数分解其质因数由到小组成的链表.
+
+    例如对于 2100 可以分解成 7 5 5 3 2 2,
+    因此就返回链表: 7->5->5->3->2->2.
+
+    Args:
+        num (int): 输入的正整数.
+
+    Returns:
+        ListNode: 质因数由大到小组成的链表.
+    """
     head = ListNode()
     cur, idx = head, num // 2
     while num > 1 and idx > 1:
