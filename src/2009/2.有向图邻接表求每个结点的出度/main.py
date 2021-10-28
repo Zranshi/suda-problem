@@ -7,12 +7,7 @@ from src.define import ArcGraph, ArcNode, VNode
 
 # START
 def get_in_and_out(g: ArcGraph):
-    """
-    根据顺序表的结构, 初始化每个节点的出度和入读.
-
-    Args:
-        g (ArcGraph): 顺序表.
-    """
+    """根据顺序表的结构, 初始化每个节点的出度和入读."""
     for line in g.graph:
         p = line.first_arc
         while p:

@@ -11,6 +11,16 @@ from pyal.container import TreeNode
 def init_tree_by_list(
     chs: Optional[List[str]], idx: int = 0
 ) -> Optional[TreeNode]:
+    """
+    递归创建二叉树.
+
+    Args:
+        chs (Optional[List[str]]): 二叉树堆值的列表.
+        idx (int, optional): 当前节点所在列表的下标. Defaults to 0.
+
+    Returns:
+        Optional[TreeNode]: 生成的二叉树.
+    """
     if chs and idx < len(chs):
         return TreeNode(
             val=chs[idx],
@@ -26,5 +36,4 @@ if __name__ == "__main__":
     chs: List[str] = list("swefdsaqwddgcsf")
     node = init_tree_by_list(chs)
     if node:
-        # 输出前序遍历
         print(node)

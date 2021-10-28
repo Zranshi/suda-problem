@@ -27,7 +27,6 @@ def get_number(n: int) -> int:
     for i in range(1, n + 1):
         if i & 1 == 0:
             pre += dp[i >> 1]
-
         dp[i] = 1 + pre
     return dp[n]
 

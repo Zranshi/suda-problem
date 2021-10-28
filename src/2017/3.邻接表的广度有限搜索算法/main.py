@@ -2,13 +2,26 @@
 # @Time     : 2021/08/02 10:36
 # @Author   : Ranshi
 # @File     : main.py
-from collections import deque
-
 from src.define import AdjacencyList
-
+from typing import List
 
 # START
-def bfs(ad_list: AdjacencyList, start: int, end: int):
+def bfs(ad_list: AdjacencyList, start: int, end: int) -> bool:
+    """
+    使用广度优先算法搜索用邻接表实现的有向图是否存在一条从 start 出发, 到 end 结束的路径.
+
+    简单的广度优先搜索, 比较困难的反而是构建数据结构并初始化一个图.
+
+    Args:
+        ad_list (AdjacencyList): 用邻接表实现的有向图.
+        start (int): 出发点.
+        end (int): 终点.
+
+    Returns:
+        bool: 是否存在这样一条路径.
+    """
+    from collections import deque
+
     dq = deque()
     dq.appendleft(start)
     path = set()

@@ -22,7 +22,18 @@ def two_sum1(node: DulLinkedList, target: int) -> str:
 
 
 def two_sum2(node: DulLinkedList, target: int) -> str:
-    # 双指针实现，利用了有序和双链表的条件，可能更好一点
+    """
+    两数之和, 双链表版.
+
+    由于采用双链表, 并且有序, 因此可以使用双指针法.
+
+    Args:
+        node (DulLinkedList): 双链表.
+        target (int): 目标数.
+
+    Returns:
+        str: 返回信息.
+    """
     cur = node
     while cur.next:
         cur = cur.next

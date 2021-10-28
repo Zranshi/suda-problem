@@ -36,5 +36,6 @@ def remove_same(node: Optional[ListNode]) -> Optional[ListNode]:
 # TEST
 if __name__ == "__main__":
     ln = ListNode.init_by_lst([2, 3, 4, 2, 4])
+    print(ln)
     remove_same(ln)
     print(ln)
