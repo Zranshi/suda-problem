@@ -11,8 +11,9 @@ from pyal.container import ListNode
 def remove_same(node: Optional[ListNode]) -> Optional[ListNode]:
     """
     删除链表中相同的节点.
-    创建一个集合, 然后遍历链表, 如果当前值不在集合中, 则将其加入集合, 如果存在, 则跳过当前结点.
-    因为需要跳过结点, 因此指针应该位于当前结点的前驱结点, 跳过结点也就是前驱结点的next指向了后继结点.
+    创建一个集合, 然后遍历链表, 如果当前值不在集合中, 将其加入集合, 如果存在, 则跳过当前结点.
+    因为需要跳过结点, 因此指针应该位于当前结点的前驱结点, 跳过结点也就是前驱结点的next指向了
+    后继结点.
 
     Args:
         node (Optional[ListNode]): 待去重的链表
